@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Home</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url('/my_css/master.css') }}" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-light bg-light container-fruid">
@@ -19,7 +19,7 @@
                   <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item bar-link">
-                  <a class="nav-link " href="#">Manage</a>
+                  <a class="nav-link" href="#">Manage</a>
                 </li>
                 <li class="nav-item bar-link">
                   <a class="nav-link" href="#">Import</a>
@@ -43,7 +43,24 @@
               </ul>
             </div>
     </nav>
-    @yield('content')
+    <div class="container mar-top">
+      <div class="row">
+        <div class="col-md-3 text-center">
+        <div class="container-fluid">
+          <div class="bg-light-blue white-text padding">Search</div>
+            <nav class="bg-light flex-row mar-top">
+              <form class="form-inline d-flex">
+                <input class="search-box form-control" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+              </form>
+            </nav>
+        </div>
+        </div>
+        <div class="col-md-9">
+          @yield('content')
+        </div>
+      </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
