@@ -43,18 +43,21 @@
               </ul>
             </div>
     </nav>
-    <div class="container mar-top">
+    <div class="container-fluid mar-top main bg-light-gray">
       <div class="row">
         <div class="col-md-3 text-center">
-        <div class="container-fluid">
-          <div class="bg-light-blue white-text padding">Search</div>
-            <nav class="bg-light flex-row mar-top">
-              <form class="form-inline d-flex">
-                <input class="search-box form-control" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-primary" type="submit">Search</button>
-              </form>
-            </nav>
-        </div>
+          <div class="container-fluid">
+            <div class="bg-light-blue white-text padding">Search</div>
+              <nav class=" flex-row mar-top">
+                <form class="form-inline d-flex">
+                  <input class="search-box form-control" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+              </nav>
+          </div>
+          <div class="container-fluid mar-top">
+            <div class="bg-light-blue white-text padding">Category</div>
+          </div>
         </div>
         <div class="col-md-9">
           @yield('content')

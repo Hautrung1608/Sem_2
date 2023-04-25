@@ -16,6 +16,10 @@
     background-color: rgb(30, 134, 253);
 }
 
+.bg-light-gray {
+    background-color: rgb(201, 201, 201);
+}
+
 .white-text {
     color: white !important;
 }
@@ -23,6 +27,11 @@
 
 .mar-top {
     margin-top: 10px;
+}
+
+.main {
+    padding-right: 10% !important;
+    padding-left: 10% !important;
 }
 
 .padding {
@@ -38,5 +47,6 @@
 }
 
 .search-box {
-    width: 65% !important;
+    width: 66% !important;
+    margin-right: 4%;
 }
