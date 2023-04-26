@@ -30,7 +30,7 @@
                     </label>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">UPDATEeeeeeee</button>
+            <button type="submit" class="btn btn-primary">UPDATE</button>
         </form>
     </div>
 @stop
