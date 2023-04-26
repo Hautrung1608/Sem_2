@@ -7,5 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    use HasFactory;
+    protected $table = 'categories';
+    protected $fillable = ['name', 'status'];
+    public $timestamps = false;
+
+    /**
+     * 
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'cate_id', 'id');
+    }
 }
