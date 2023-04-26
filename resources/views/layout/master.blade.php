@@ -27,7 +27,7 @@
                   <li class="nav-item dropdown avar-div">
                     <a class="nav-link dropdown-toggle user-name" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <img src="{{ url('/image/default-avar.jpg') }}" alt="" class="avatar"/>
-                      safahfufjashfnuiajfnasjnasfnai
+                      ADMIN
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                       <a class="dropdown-item" href="#">Login</a>
@@ -40,8 +40,19 @@
     <div class="container-fluid mar-top">
       <div class="row">
         <div class="col-md-2 text-center">
-          <div class="container-fluid mar-top btn-group-vertical">
-            <a class="btn btn-outline-primary"> hehe</a>
+          <div class="">
+            <div class="container btn btn-outline-primary nut">
+              <a class="chu" href=""> hehe</a>
+            </div>
+            <div class="container btn btn-outline-primary nut">
+              <a class="chu" href=""> hehe</a>
+            </div>
+            <div class="container btn btn-outline-primary nut">
+              <a class="chu" href=""> hehe</a>
+            </div>
+            <div class="container btn btn-outline-primary nut">
+              <a class="chu" href=""> hehe</a>
+            </div>
           </div>
         </div>
         <div class="col-md-9 bg-light-gray">
