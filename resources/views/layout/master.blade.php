@@ -12,20 +12,14 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-light bg-light container-fruid">
-        <a class="navbar-brand" href="/">Logo</a>
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <a class="navbar-brand avar-div bar-link" href="/">Logo</a>
+        <div class="collapse navbar-collapse search-box" id="collapsibleNavId">
               <ul class="navbar-nav mt-2 mt-lg-0 col-lg-6">
-                <li class="nav-item active bar-link">
-                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item bar-link">
-                  <a class="nav-link" href="#">Manage</a>
-                </li>
-                <li class="nav-item bar-link">
-                  <a class="nav-link" href="#">Import</a>
-                </li>
-                <li class="nav-item bar-link">
-                  <a class="nav-link" href="#">export</a>
+                <li>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form>
                 </li>
               </ul>
               <div class="col-lg-4"></div>
@@ -43,23 +37,14 @@
               </ul>
             </div>
     </nav>
-    <div class="container-fluid mar-top main bg-light-gray">
+    <div class="container-fluid mar-top">
       <div class="row">
-        <div class="col-md-3 text-center">
-          <div class="container-fluid">
-            <div class="bg-light-blue white-text padding">Search</div>
-              <nav class=" flex-row mar-top">
-                <form class="form-inline d-flex">
-                  <input class="search-box form-control" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-primary" type="submit">Search</button>
-                </form>
-              </nav>
-          </div>
-          <div class="container-fluid mar-top">
-            <div class="bg-light-blue white-text padding">Category</div>
+        <div class="col-md-2 text-center">
+          <div class="container-fluid mar-top btn-group-vertical">
+            <a class="btn btn-outline-primary"> hehe</a>
           </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 bg-light-gray">
           @yield('content')
         </div>
       </div>
