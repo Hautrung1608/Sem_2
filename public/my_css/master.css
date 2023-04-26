@@ -1,0 +1,68 @@
+.avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.avar-div {
+    margin-left: 10%;
+}
+
+.user-name {
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.logo {
+    margin-left: 50px;
+    width: 150px;
+}
+
+.bar-link {
+    margin-right: 10px;
+}
+
+.bg-light-blue {
+    background-color: rgb(30, 134, 253);
+}
+
+.bg-light-gray {
+    background-color: rgb(238, 238, 238);
+}
+
+.white-text {
+    color: white !important;
+}
+
+
+.mar-top {
+    margin-top: 10px;
+}
+
+.main {
+    padding-right: 10% !important;
+    padding-left: 10% !important;
+}
+
+.padding {
+    padding: 5px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex {
+    display: flex !important;
+}
+
+.search-box {
+    margin-left: 100px;
+}
+.nut{
+    margin-top: 10px;
+}
+.chu{
+    font-size: 20px;
+}
