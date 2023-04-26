@@ -5,7 +5,13 @@
 }
 
 .avar-div {
-    margin-left: 30%;
+    margin-left: 10%;
+}
+
+.user-name {
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .logo {

@@ -14,7 +14,7 @@
     <nav class="navbar navbar-expand-sm navbar-light bg-light container-fruid">
         <a class="navbar-brand logo bar-link" href="/">Logo</a>
         <div class="collapse navbar-collapse search-box" id="collapsibleNavId">
-              <ul class="navbar-nav mt-2 mt-lg-0 col-lg-6">
+              <ul class="navbar-nav mt-2 mt-lg-0 col-lg-5">
                 <li>
                   <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -22,19 +22,19 @@
                   </form>
                 </li>
               </ul>
-              <div class="col-lg-4"></div>
-              <ul class="navbar-nav  mt-2 mt-lg-0 col-lg-2">
-                <li class="nav-item dropdown avar-div">
-                  <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Someone
-                    <img src="{{ url('/image/default-avar.jpg') }}" alt="" class="avatar"/>
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="#">Login</a>
-                    <a class="dropdown-item" href="#">Register</a>
-                  </div>
-                </li>
-              </ul>
+              <div class="col-lg-3"></div>
+                <ul class="navbar-nav mt-2 mt-lg-0 col-lg-2 avar-div">
+                  <li class="nav-item dropdown avar-div">
+                    <a class="nav-link dropdown-toggle user-name" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <img src="{{ url('/image/default-avar.jpg') }}" alt="" class="avatar"/>
+                      safahfufjashfnuiajfnasjnasfnai
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                      <a class="dropdown-item" href="#">Login</a>
+                      <a class="dropdown-item" href="#">Register</a>
+                    </div>
+                  </li>
+                </ul>
             </div>
     </nav>
     <div class="container-fluid mar-top">
