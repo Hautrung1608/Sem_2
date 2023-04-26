@@ -3,10 +3,18 @@
     height: 40px;
     width: 40px;
 }
+
 .avar-div {
-    margin-left: 30%;
+    margin-left: 10%;
 }
-.logo{
+
+.user-name {
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.logo {
     margin-left: 90px;
 }
 
@@ -50,20 +58,4 @@
 
 .search-box {
     margin-left: 50px;
-}
-.element {
-    width: 200px;
-    white-space: nowrap;
-    overflow: hidden; 
-    text-overflow: ellipsis;
-  }
-.nut{
-    /* background-color: antiquewhite; */
-   
-    margin-top: 10px;
-    text-align: center;
-    height: 45px;
-}
-.chu{
-    font-size: 20px;
 }
