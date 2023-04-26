@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -11,7 +12,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $category = Category::orderByDesc('id')->paginate(5);
+
+        return view('category.index', compact('category'));
     }
 
     /**
@@ -19,15 +22,26 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('category.add');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        //
+        $req->validate([
+            'name' =>'required|min:2|unique:categories',
+        ],[
+            'name.required' =>'Danh mục không được để rỗng',
+            'name.unique' =>'Danh mục'.$req->name.'đã tồn tại',
+            'name.unique.required' =>'Danh mục'.$req->name.'đã tồn tại'
+            
+        ]);
+        $category = Category::create($req->all());
+        if ($category) {
+            return redirect()->route('category.index')->with('success', 'Thêm mới thành công');
+        }
     }
 
     /**
@@ -43,15 +57,30 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category = category::find($id);
+        return view('category.edit',compact('category'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $req, string $id)
     {
-        //
+        $req->validate([
+            'name' =>'required|min:2|unique:categories,name,'.$id,
+        ],[
+            'name.required' =>'Danh mục không được để rỗng',
+            'name.unique' =>'Danh mục'.$req->name.'đã tồn tại',
+            'name.unique.required' =>'Danh mục'.$req->name.'đã tồn tại'
+            
+        ]);
+        $category = Category::find($id);
+        try {
+            $category->update($req->all());
+            return redirect()->route('category.index')->with('success', 'Cập nhật thành công');
+        } catch (\Throwable $th) {
+            return redirect()->route('category.index')->with('error', "Không thể cập nhật danh mục");
+        }
     }
 
     /**
@@ -59,6 +88,13 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $category = Category::find($id);
+
+        try {
+            $category->delete();
+            return redirect()->back()->with('success', 'Xóa thành công');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', "Không thể xóa danh mục $category->name vì đã tồn tại trong Product");
+        }
     }
 }
