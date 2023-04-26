@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light container-fruid">
-        <a class="navbar-brand avar-div bar-link" href="/">Logo</a>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light container-fruid ">
+        <a class="navbar-brand logo bar-link" href="/">Logo</a>
         <div class="collapse navbar-collapse search-box" id="collapsibleNavId">
-              <ul class="navbar-nav mt-2 mt-lg-0 col-lg-6">
+              <ul class="navbar-nav mt-2 mt-lg-0 col-lg-5">
                 <li>
                   <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -25,11 +25,13 @@
               <div class="col-lg-4"></div>
               <ul class="navbar-nav  mt-2 mt-lg-0 col-lg-2">
                 <li class="nav-item dropdown avar-div">
-                  <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Someone
+                  <a class="nav-link dropdown-toggle element" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img src="{{ url('/image/default-avar.jpg') }}" alt="" class="avatar"/>
+
+                    ADMIN
+
                   </a>
-                  <div class="dropdown-menu" aria-labelledby="dropdownId">
+                  <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Login</a>
                     <a class="dropdown-item" href="#">Register</a>
                   </div>
@@ -39,10 +41,25 @@
     </nav>
     <div class="container-fluid mar-top">
       <div class="row">
-        <div class="col-md-2 text-center">
-          <div class="container-fluid mar-top btn-group-vertical">
-            <a class="btn btn-outline-primary"> hehe</a>
-          </div>
+        <div class="col-md-2 col-lg-2 text-center">
+          
+            <div class="container nut btn btn-outline-success" >
+              <a class="chu" href=""> hehe</a>
+            </div>
+            <div class="container nut btn btn-outline-success" >
+              <a class="chu" href=""> hehe</a>
+            </div>
+            <div class="container nut btn btn-outline-success" >
+              <a class="chu" href=""> hehe</a>
+            </div>
+            <div class="container nut btn btn-outline-success" >
+              <a class="chu" href=""> hehe</a>
+            </div>
+            <div class="container nut btn btn-outline-success" >
+              <a class="chu" href=""> hehe</a>
+            </div>
+            
+          
         </div>
         <div class="col-md-9 bg-light-gray">
           @yield('content')
