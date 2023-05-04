@@ -7,7 +7,7 @@
         <a class="chu" href="">Product</a>
       </div>
       <div class="container btn btn-outline-primary nut">
-        <a class="chu" href=""> hehe</a>
+        <a class="chu" href=""> Category</a>
       </div>
       <div class="container btn btn-outline-primary nut">
         <a class="chu" href=""> hehe</a>
