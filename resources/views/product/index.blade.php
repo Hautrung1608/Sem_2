@@ -24,7 +24,7 @@
                     <td>Số lượng</td>
                     <td>Đơn giá</td>
                     <td>Ảnh</td>
-                    <td>Trạng tdái</td>
+                    <td>Trạng thái</td>
                     <td></td>
                 </tr>
             </thead>
