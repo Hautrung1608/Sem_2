@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
+//Category
+
 Route::get('/category', [CategoryController::class, 'index'])->name('category.index'); 
 
 Route::get('/category-add', [CategoryController::class, 'create'])->name('category.create');
@@ -26,4 +28,8 @@ Route::get('/category-edit/{id}', [CategoryController::class, 'edit'])->name('ca
 Route::post('/category-update/{id}', [CategoryController::class, 'update'])->name('category.update');
 
 Route::get('/category-delete/{id}', [CategoryController::class, 'destroy'])->name('category.delete');
+
+//Product
+
+Route::get('/product', [CategoryController::class, 'index'])->name('product.index');
 

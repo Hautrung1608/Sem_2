@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string("quantity");
             $table->string("price");
             $table->string("image");
+            $table->tinyInteger("status");
             $table->foreign('cate_id')->references('id')->on('categories');
             $table->timestamps();
         });
