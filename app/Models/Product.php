@@ -11,8 +11,8 @@ class Product extends Model
     protected $fillable = ['name', 'cate_id','origin','quantity','price','image','status'];
     public $timestamps = false;
 
-    public function categories()
+    public function category()
     {
-        return $this->hasOne(Category::class, 'id', 'cate_id');
+        return $this->belongsTo(Category::class, 'cate_id', 'id');
     }
 }
