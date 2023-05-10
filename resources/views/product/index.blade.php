@@ -41,8 +41,9 @@
                             <img src="{{url('uploads')}}/{{$item->image}}" alt=""  widtd="50px">
                         </td>
                         <td>{!! $item->status ? '<span class="badge badge-pill badge-primary">In stock</span>' : '<span class="badge badge-pill badge-danger">Out of stock</span>' !!}</td>
-                        <td><a href="{{route('product.delete',$item->id)}}" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa không ?')" >Xóa</a></td>
+                        <td><a href="{{route('product.destroy',$item->id)}}" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa không ?')" >Xóa</a></td>
                         <td><a href="{{route('product.edit',$item->id)}}" class="btn btn-primary" >Sửa</a></td>
+                        
                     </tr>
                 @endforeach
 

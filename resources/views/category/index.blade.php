@@ -28,7 +28,7 @@
                     <td scope="row">{{ $loop->iteration }}</td>
                     <td>{{ $item->name }}</td>
                     <td>{!! $item->status ? '<span class="badge badge-pill badge-primary">Hiện</span>' : '<span class="badge badge-pill badge-danger">Ẩn</span>' !!}</td>
-                    <td><a href="{{route('category.delete',$item->id)}}" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa không ?')" >Xóa</a></td>
+                    <td><a href="{{route('category.destroy',$item->id)}}" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa không ?')" >Xóa</a></td>
                     <td><a href="{{route('category.edit',$item->id)}}" class="btn btn-primary" >Sửa</a></td>
                 </tr>
             @endforeach

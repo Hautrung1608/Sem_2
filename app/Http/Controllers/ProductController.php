@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Psy\Readline\Hoa\Console;
+use Symfony\Component\VarDumper\VarDumper;
 
 class ProductController extends Controller
 {
@@ -115,10 +116,11 @@ class ProductController extends Controller
 
         try {
             $req->merge(['image' => $file_name]);
-            Product::find($id)->update($req->all());
+            $product->update($req->all());
             return redirect()->route('product.index')->with('success', 'Cập nhật thành công');
         } catch (\Throwable $th) {
-            return redirect()->route('product.index')->with('error', "Không thể cập nhật danh mục");
+            return redirect()->back()->with('error', "Không thể cập nhật danh mục");
+            
         }
     }
 

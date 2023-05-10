@@ -11,6 +11,7 @@
             </div>
         @endif
         <form method="POST" enctype="multipart/form-data" action="{{route('product.update',$product->id)}}">
+            @method('PATCH')
             @csrf
             <div class="form-group">
                 <label for="exampleInputEmail1">Tên Sản Phẩm</label>
@@ -20,7 +21,11 @@
                 <label for="">Tên danh mục</label>
                 <select class="form-control" name="cate_id" id="">
                     @foreach ($category as $value)
-                        <option value="{{ $value->id == $product->cate_id ? 'selected' : '' }}">{{ $value->name }}</option>
+                        @if ($value->id == $product->cate_id)
+                            <option value="{{ $value->id }}" selected>{{ $value->name }}</option>
+                        @else
+                            <option value="{{ $value->id }}">{{ $value->name }}</option>
+                        @endif
                     @endforeach
                 </select>
             </div>
