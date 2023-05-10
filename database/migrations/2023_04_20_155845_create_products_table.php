@@ -15,8 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->bigInteger("cate_id")->unsigned();
-            $table->string("unit");
             $table->string("origin");
+            $table->string("quantity");
+            $table->string("price");
+            $table->string("image");
+            $table->tinyInteger("status");
             $table->foreign('cate_id')->references('id')->on('categories');
             $table->timestamps();
         });

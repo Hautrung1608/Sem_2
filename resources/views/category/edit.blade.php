@@ -11,6 +11,7 @@
             </div>
         @endif
         <form method="POST" action="{{route('category.update',$category->id)}}">
+            @method('PUT')
             @csrf
             <div class="form-group">
                 <label for="exampleInputEmail1">Tên tác giả</label>

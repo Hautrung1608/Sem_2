@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +18,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
-Route::get('/category', [CategoryController::class, 'index'])->name('category.index'); 
+//Category
 
-Route::get('/category-add', [CategoryController::class, 'create'])->name('category.create');
-Route::post('/category-add', [CategoryController::class, 'store']);
+Route::resource('category',CategoryController::class);
 
-Route::get('/category-edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
-Route::post('/category-update/{id}', [CategoryController::class, 'update'])->name('category.update');
+//Product
 
-Route::get('/category-delete/{id}', [CategoryController::class, 'destroy'])->name('category.delete');
+Route::resource('product',ProductController::class);
+
 

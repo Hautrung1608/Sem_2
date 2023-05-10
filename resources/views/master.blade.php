@@ -15,8 +15,9 @@
 
     <div class="container-fluid mar-top">
       <div class="row">
-        @include('layout.tabbar')
-        <div class="col-md-9 bg-light-gray">
+        
+          @include('layout.tabbar')
+        <div class="col-lg-10 bg-light-gray">
           @yield('content')
         </div>
       </div>
