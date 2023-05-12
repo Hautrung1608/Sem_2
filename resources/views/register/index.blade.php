@@ -62,28 +62,7 @@
 
       
 
-      <a href="{{route
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      ('login.index')}}" class="text-center">I already have a membership</a>
+      <a href="{{route('login.index')}}" class="text-center">I already have a membership</a>
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->
