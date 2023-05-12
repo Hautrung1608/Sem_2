@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,10 +21,24 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 
 //Category
 
-Route::resource('category',CategoryController::class);
+Route::resource('category', CategoryController::class);
+Route::get('/category-softDelete', [CategoryController::class, 'softDelete'])->name('category.softDelete');
+Route::get('/restore/{id}', [CategoryController::class, 'restore'])->name('category.restore');
+Route::get('/forceDelete/{id}', [CategoryController::class, 'forceDelete'])->name('category.forceDelete');
+
 
 //Product
 
-Route::resource('product',ProductController::class);
+Route::resource('product', ProductController::class);
+Route::get('/product-softDelete', [ProductController::class, 'softDelete'])->name('product.softDelete');
+Route::get('/restore/{id}', [ProductController::class, 'restore'])->name('product.restore');
+Route::get('/forceDelete/{id}', [ProductController::class, 'forceDelete'])->name('product.forceDelete');
+
+//login
+
+Route::get('/login', [UserController::class, 'login'])->name('login.index');
 
 
+//register
+
+Route::get('/register', [UserController::class, 'register'])->name('register.index');

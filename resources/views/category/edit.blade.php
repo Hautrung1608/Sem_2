@@ -9,7 +9,7 @@
                     @endforeach
                 </ul>
             </div>
-        @endif
+        @endif 
         <form method="POST" action="{{route('category.update',$category->id)}}">
             @method('PUT')
             @csrf

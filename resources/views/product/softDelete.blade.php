@@ -13,10 +13,6 @@
               $(".alert").alert();
             </script>
         @endif
-        <a href="{{route('product.create')}}" class="btn btn-success">ADD</a>
-        <a href="{{route('product.softDelete')}}" title="Thùng rác">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ13Fw8Nid9UTieyvpXQXvV50B-6LDOP1AtA&usqp=CAU" alt="" width="100px">
-        </a>
         <table class="table">
             <thead>
                 <tr>
@@ -32,7 +28,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($product as $item)
+                @forelse ($product as $item)
                     <tr>
                         <td scope="row">{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
@@ -44,13 +40,12 @@
                             <img src="{{url('uploads')}}/{{$item->image}}" alt=""  widtd="50px">
                         </td>
                         <td>{!! $item->status ? '<span class="badge badge-pill badge-primary">In stock</span>' : '<span class="badge badge-pill badge-danger">Out of stock</span>' !!}</td>
-                        <td><a href="{{route('product.destroy',$item->id)}}" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa không ?')" >Xóa</a></td>
-                        <td><a href="{{route('product.edit',$item->id)}}" class="btn btn-primary" >Sửa</a></td>
-                        
+                        <td><a href="{{route('product.forceDelete',$item->id)}}" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa không ?')" >Xóa</a></td>
+                        <td><a href="{{route('product.restore',$item->id)}}" class="btn btn-primary" >Khôi phục</a></td>
                     </tr>
-                @endforeach
-
-
+                @empty
+                    <h1>No Product</h1>
+                @endforelse
             </tbody>
         </table>
         

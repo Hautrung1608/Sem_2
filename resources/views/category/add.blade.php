@@ -10,7 +10,8 @@
                 </ul>
             </div>
         @endif
-        <form method="POST">
+        <form method="POST" action="{{route('category.store')}}> 
+
             @csrf
             <div class="form-group">
                 <label for="exampleInputEmail1">Tên Danh mục</label>

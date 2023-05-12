@@ -14,6 +14,9 @@
         </script>
     @endif
     <a href="{{route('category.create')}}" class="btn btn-success">ADD</a>
+    <a href="{{route('category.softDelete')}}" title="Thùng rác">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ13Fw8Nid9UTieyvpXQXvV50B-6LDOP1AtA&usqp=CAU" alt="" width="100px">
+    </a>
     <table class="table">
         <thead>
             <tr>
