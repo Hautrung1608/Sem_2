@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Psy\Readline\Hoa\Console;
-use Symfony\Component\VarDumper\VarDumper;
+use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
@@ -136,6 +135,29 @@ class ProductController extends Controller
             return redirect()->back()->with('success', 'Xóa thành công');
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', "Không thể xóa sản phẩm $product->name");
+        }
+    }
+    public function softDelete()
+    {
+        $product = Product::onlyTrashed()->get();
+        return view('product.softDelete',compact('product'));
+    }
+    public function restore($id)
+    {
+        try{
+            Product::withTrashed()->find($id)->restore();
+            return redirect()->route('product.index');
+        } catch (\Throwable $th) {
+            throw $th; 
+        }
+    }
+    public function forceDelete($id)
+    {
+        try{
+            Product::withTrashed()->find($id)->forceDelete();
+            return redirect()->route('product.index');
+        } catch (\Throwable $th) {
+            throw $th; 
         }
     }
 }

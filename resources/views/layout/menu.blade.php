@@ -19,8 +19,8 @@
                   ADMIN
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownId">
-                  <a class="dropdown-item" href="#">Login</a>
-                  <a class="dropdown-item" href="#">Register</a>
+                  <a class="dropdown-item" href="{{route('login.index')}}">Sign in</a>
+                  <a class="dropdown-item" href="{{route('register.index')}}">Register</a>
                 </div>
               </li>
             </ul>
