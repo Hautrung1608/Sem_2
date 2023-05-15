@@ -10,7 +10,7 @@
                 </ul>
             </div>
         @endif
-        <form method="POST" enctype="multipart/form-data" action="{{route('product.store')}}>
+        <form method="POST" enctype="multipart/form-data" action="{{route('product.store')}}">
             @csrf
             <div class="form-group">
                 <label for="exampleInputEmail1">Tên Sản Phẩm</label>

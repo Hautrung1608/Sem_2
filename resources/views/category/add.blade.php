@@ -10,7 +10,7 @@
                 </ul>
             </div>
         @endif
-        <form method="POST" action="{{route('category.store')}}> 
+        <form method="POST" action="{{route('category.store')}}"> 
 
             @csrf
             <div class="form-group">

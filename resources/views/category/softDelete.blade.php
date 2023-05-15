@@ -16,10 +16,10 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>STT</th>
-                    <th>Tên danh mục</th>
-                    <th>Trạng thái</th>
-                    <th></th>
+                    <td>STT</td>
+                    <td>Tên Sản Phẩm</td>
+                    <td>Trạng thái</td>
+                    <td></td>
                 </tr>
             </thead>
             <tbody>
@@ -28,19 +28,15 @@
                         <td scope="row">{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
                         <td>{!! $item->status
-                            ? '<span class="badge badge-pill badge-primary">Hiện</span>'
-                            : '<span class="badge badge-pill badge-danger">Ẩn</span>' !!}</td>
-                        <td><a href="{{ route('category.restore', $item->id) }}" class="btn btn-primary">Khôi phục</a></td>
+                            ? '<span class="badge badge-pill badge-primary">In stock</span>'
+                            : '<span class="badge badge-pill badge-danger">Out of stock</span>' !!}</td>
                         <td><a href="{{ route('category.forceDelete', $item->id) }}" class="btn btn-danger"
                                 onclick="return confirm('Bạn có chắc chắn muốn xóa không ?')">Xóa</a></td>
+                        <td><a href="{{ route('category.restore', $item->id) }}" class="btn btn-primary">Khôi phục</a></td>
                     </tr>
                 @empty
-            <tfoot>
-                <h1>No Category</h1>
-            </tfoot>
-            @endforelse
-
-
+                    <h1>No Category</h1>
+                @endforelse
             </tbody>
         </table>
     </div>
