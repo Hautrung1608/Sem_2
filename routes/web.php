@@ -46,4 +46,4 @@ Route::post('/register', [UserController::class, 'postRegister']);
 
 //logout
 
-Route::get('logout', [UserController::class, 'logout']);
+Route::get('logout', [UserController::class, 'logout'])->name('logout');
