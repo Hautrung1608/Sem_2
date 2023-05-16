@@ -40,7 +40,6 @@ class CategoryController extends Controller
 
         ]);
         $category = Category::create($req->all());
-        dd($category);
         if ($category) {
             return redirect()->route('category.index')->with('success', 'Thêm mới thành công');
         }

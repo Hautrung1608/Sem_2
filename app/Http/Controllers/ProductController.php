@@ -81,6 +81,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         $category = Category::all();
         return view('product.edit',compact('product','category'));
+        
     }
 
     /**

@@ -31,14 +31,19 @@ Route::get('/forceDelete/{id}', [CategoryController::class, 'forceDelete'])->nam
 
 Route::resource('product', ProductController::class);
 Route::get('/product-softDelete', [ProductController::class, 'softDelete'])->name('product.softDelete');
-Route::get('/restore/{id}', [ProductController::class, 'restore'])->name('product.restore');
-Route::get('/forceDelete/{id}', [ProductController::class, 'forceDelete'])->name('product.forceDelete');
+Route::get('/prorestore/{id}', [ProductController::class, 'restore'])->name('product.restore');
+Route::get('/proforceDelete/{id}', [ProductController::class, 'forceDelete'])->name('product.forceDelete');
 
 //login
 
 Route::get('/login', [UserController::class, 'login'])->name('login.index');
-
+Route::post('/login', [UserController::class, 'postLogin']);
 
 //register
 
 Route::get('/register', [UserController::class, 'register'])->name('register.index');
+Route::post('/register', [UserController::class, 'postRegister']);
+
+//logout
+
+Route::get('logout', [UserController::class, 'logout']);
