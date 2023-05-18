@@ -6,8 +6,8 @@
         <ul class="navbar-nav mt-2 mt-lg-0 col-lg-5">
             <li>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <input class="form-control search-in" type="text" placeholder="Search">
+                    <button class="search" type="submit"><i class="bi bi-search"></i></button>
                 </form>
             </li>
         </ul>
