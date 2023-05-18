@@ -17,14 +17,14 @@
                 <a class="nav-link dropdown-toggle user-name" href="#" id="dropdownId" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     <img src="{{ url('/image/default-avar.jpg') }}" alt="" class="avatar" />
-                    {{ Auth::check() ? Auth::user()->name : 'Account' }}
+                    {{ Auth::check() ? Auth::user()->name : 'Tài khoản' }}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="{{ route('register.index') }}">Sign up</a>
+                    <a class="dropdown-item" href="{{ route('register.index') }}">Đăng kí</a>
                     @auth
-                        <a class="dropdown-item" href="{{ route('logout') }}">Log out</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}">Đăng xuất</a>
                     @else
-                        <a class="dropdown-item" href="{{ route('login.index') }}">Sign in</a>
+                        <a class="dropdown-item" href="{{ route('login.index') }}">Đăng nhập</a>
                     @endauth
                 </div>
             </li>
