@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Category;
 use App\Models\Product;
@@ -15,7 +15,7 @@ class ProductController extends Controller
     public function index()
     {
         $product = Product::all();
-        return view('product.index',compact('product'));
+        return view('admin.product.index',compact('product'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ProductController extends Controller
     {
         $product = Product::all();
         $category = Category::all();
-        return view('product.add',compact('product', 'category'));
+        return view('admin.product.add',compact('product', 'category'));
     }
 
     /**
@@ -59,7 +59,7 @@ class ProductController extends Controller
         try {
             $req->merge(['image' => $file_name]);
             Product::create($req->all());
-            return redirect()->route('product.index')->with('success', 'Thêm mới thành công');
+            return redirect()->route('admin.product.index')->with('success', 'Thêm mới thành công');
         } catch (\Throwable $th) {
             
         }
@@ -80,7 +80,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $category = Category::all();
-        return view('product.edit',compact('product','category'));
+        return view('admin.product.edit',compact('product','category'));
         
     }
 
@@ -117,7 +117,7 @@ class ProductController extends Controller
         try {
             $req->merge(['image' => $file_name]);
             $product->update($req->all());
-            return redirect()->route('product.index')->with('success', 'Cập nhật thành công');
+            return redirect()->route('admin.product.index')->with('success', 'Cập nhật thành công');
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', "Không thể cập nhật danh mục");
             
@@ -141,13 +141,13 @@ class ProductController extends Controller
     public function softDelete()
     {
         $product = Product::onlyTrashed()->get();
-        return view('product.softDelete',compact('product'));
+        return view('admin.product.softDelete',compact('product'));
     }
     public function restore($id)
     {
         try{
             Product::withTrashed()->find($id)->restore();
-            return redirect()->route('product.index');
+            return redirect()->route('admin.product.index');
         } catch (\Throwable $th) {
             throw $th; 
         }
@@ -156,7 +156,7 @@ class ProductController extends Controller
     {
         try{
             Product::withTrashed()->find($id)->forceDelete();
-            return redirect()->route('product.index');
+            return redirect()->route('admin.product.index');
         } catch (\Throwable $th) {
             throw $th; 
         }

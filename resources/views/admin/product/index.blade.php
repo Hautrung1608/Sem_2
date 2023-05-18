@@ -1,4 +1,4 @@
-@extends('master')
+@extends('admin.master')
 @section('content')
     <div class="container">
         @if (session('success'))
@@ -13,6 +13,9 @@
                 $(".alert").alert();
             </script>
         @endif
+        <a href="{{ route('product.softDelete') }}" title="Thùng rác">
+            <img src="{{ url('/image/recycle-bin.png') }}" class="trash">
+        </a>
         <table class="table">
             <thead>
                 <tr>
@@ -28,7 +31,7 @@
                 </tr>
             </thead>
             <tbody>
-                @forelse ($product as $item)
+                @foreach ($product as $item)
                     <tr>
                         <td scope="row">{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
@@ -42,13 +45,21 @@
                         <td>{!! $item->status
                             ? '<span class="badge badge-pill badge-primary">In stock</span>'
                             : '<span class="badge badge-pill badge-danger">Out of stock</span>' !!}</td>
-                        <td><a href="{{ route('product.forceDelete', $item->id) }}" class="btn btn-danger"
-                                onclick="return confirm('Bạn có chắc chắn muốn xóa không ?')">Xóa</a></td>
-                        <td><a href="{{ route('product.restore', $item->id) }}" class="btn btn-primary">Khôi phục</a></td>
+                        <td>
+                            <form action="{{ route('product.destroy', $item->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger"
+                                    onclick="return confirm('Bạn có chắc chắn muốn xóa không ?')">Xóa</button>
+                                <a href="{{ route('product.edit', $item->id) }}" class="btn btn-primary">Sửa</a>
+                            </form>
+
+                        </td>
+
                     </tr>
-                @empty
-                    <h1>No Product</h1>
-                @endforelse
+                @endforeach
+
+
             </tbody>
         </table>
 

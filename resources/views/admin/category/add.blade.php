@@ -1,4 +1,4 @@
-@extends('master')
+@extends('admin.master')
 @section('content')
     <div class="container">
         @if ($errors->any())

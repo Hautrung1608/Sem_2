@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
@@ -15,7 +15,7 @@ class CategoryController extends Controller
     {
         $category = Category::search()->paginate(10)->withQueryString();
 
-        return view('category.index', compact('category'));
+        return view('admin.category.index', compact('category'));
     }
 
     /**
@@ -23,7 +23,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('category.add');
+        return view('admin.category.add');
     }
 
     /**
@@ -41,7 +41,7 @@ class CategoryController extends Controller
         ]);
         $category = Category::create($req->all());
         if ($category) {
-            return redirect()->route('category.index')->with('success', 'Thêm mới thành công');
+            return redirect()->route('admin.category.index')->with('success', 'Thêm mới thành công');
         }
     }
 
@@ -59,7 +59,7 @@ class CategoryController extends Controller
     public function edit(string $id)
     {
         $category = category::find($id);
-        return view('category.edit', compact('category'));
+        return view('admin.category.edit', compact('category'));
     }
 
     /**
@@ -78,9 +78,9 @@ class CategoryController extends Controller
         $category = Category::find($id);
         try {
             $category->update($req->all());
-            return redirect()->route('category.index')->with('success', 'Cập nhật thành công');
+            return redirect()->route('admin.category.index')->with('success', 'Cập nhật thành công');
         } catch (\Throwable $th) {
-            return redirect()->route('category.index')->with('error', "Không thể cập nhật danh mục");
+            return redirect()->route('admin.category.index')->with('error', "Không thể cập nhật danh mục");
         }
     }
 
@@ -93,7 +93,7 @@ class CategoryController extends Controller
 
         try {
             $category->delete();
-            return redirect()->route('category.index')->with('success', 'Xóa thành công');
+            return redirect()->route('admin.category.index')->with('success', 'Xóa thành công');
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', "Không thể xóa danh mục $category->name vì đã tồn tại trong Sản phẩm");
         }
@@ -101,14 +101,14 @@ class CategoryController extends Controller
     public function softDelete()
     {
         $category = Category::onlyTrashed()->get();
-        return view('category.softDelete', compact('category'));
+        return view('admin.category.softDelete', compact('category'));
     }
 
     public function restore($id)
     {
         try {
             Category::withTrashed()->find($id)->restore();
-            return redirect()->route('category.index');
+            return redirect()->route('admin.category.index');
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -118,7 +118,7 @@ class CategoryController extends Controller
     {
         try {
             Category::withTrashed()->find($id)->forceDelete();
-            return redirect()->route('category.index');
+            return redirect()->route('admin.category.index');
         } catch (\Throwable $th) {
             throw $th;
         }

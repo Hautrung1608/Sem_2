@@ -20,7 +20,7 @@ class UserController extends Controller
     {
 
         try {
-            if (Auth::attempt(['email' => $req->email, 'password' => $req->password,'role'=>1])) {
+            if (Auth::attempt(['email' => $req->email, 'password' => $req->password, 'role' => 2])) {
                 return redirect()->route('home');
             } else {
                 return redirect()->back()->with('error', 'Email hoặc mật khẩu không đúng');
@@ -30,18 +30,43 @@ class UserController extends Controller
             dd($th);
         }
     }
+    public function logon()
+    {
+        return view('admin.login');
+    }
+    public function postLogon(Request $req)
+    {
+        try {
+            if (Auth::attempt(['email' => $req->email, 'password' => $req->password, 'role' => 1])) {
+                return redirect()->route('admin.index');
+            } else {
+                return redirect()->back()->with('error', 'Email hoặc mật khẩu không đúng');
+            }
+        } catch (\Throwable $th) {
+            //throw $th;
+            dd($th);
+        }
+    }
+    public function adminLogout()
+    {
+        try {
+            Auth::logout();
+            return redirect()->route('admin.index');
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
 
     public function logout(Request $req)
     {
         try {
-            if(Auth::attempt(['email' => $req->email, 'password' => $req->password])){
+            if (Auth::attempt(['email' => $req->email, 'password' => $req->password,'role'=>2])) {
                 Auth::logout();
                 return redirect()->route('home');
             } else {
                 Auth::logout();
                 return redirect()->route('home');
             }
-            
         } catch (\Throwable $th) {
             //throw $th;
             dd($th);
@@ -50,7 +75,7 @@ class UserController extends Controller
 
     public function register()
     {
-        return view('register.index');
+        return view('admin.register.index');
     }
     public function postRegister(PostRegisterRequest $req)
     {
