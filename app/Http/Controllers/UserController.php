@@ -32,7 +32,7 @@ class UserController extends Controller
     }
     public function logon()
     {
-        return view('admin.login');
+        return view('admin.login.index');
     }
     public function postLogon(Request $req)
     {
