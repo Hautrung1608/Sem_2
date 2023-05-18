@@ -27,10 +27,6 @@
     background-color: rgb(30, 134, 253);
 }
 
-.bg-blur {
-    filter: blur(8px);
-}
-
 .bg-main {
     background-image: url('../image/back-img.jpg') !important;
     background-position: center;
@@ -42,7 +38,7 @@
 
 .bg-text {
     font-weight: bold;
-    color: white;
+    background-color: rgba(0, 0, 0, 0.199);
 }
 
 .div-bg {
@@ -122,4 +118,17 @@
 
 .nut:hover {
     color: black;
+}
+
+.table tr td {
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.trash {
+    width: 100px;
+    position: fixed;
+    z-index: 2000;
+    right: 0.1%;
+    bottom: 0.3%;
 }

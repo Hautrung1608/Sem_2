@@ -3,7 +3,6 @@
         <img src="{{ url('/image/logo.png') }}" alt="" class="logo" />
     </a>
     <div class="collapse navbar-collapse search-box" id="collapsibleNavId">
-=======
         <ul class="navbar-nav mt-2 mt-lg-0 col-lg-5">
             <li>
                 <form class="form-inline my-2 my-lg-0">
@@ -32,4 +31,3 @@
         </ul>
     </div>
 </nav>
->>>>>>> c28b358ba9c6f00eb7a56c298f1b0f95e210edd6

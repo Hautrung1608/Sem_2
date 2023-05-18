@@ -16,7 +16,6 @@
         <div class="row">
             @include('layout.tabbar')
             <div class="col-lg-10 ">
-              <div class="bg-blur"></div>
               <div class="bg-text">
                 @yield('content')
               </div>

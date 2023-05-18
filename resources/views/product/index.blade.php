@@ -13,10 +13,8 @@
                 $(".alert").alert();
             </script>
         @endif
-        <a href="{{ route('product.create') }}" class="btn btn-success">ADD</a>
         <a href="{{ route('product.softDelete') }}" title="Thùng rác">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ13Fw8Nid9UTieyvpXQXvV50B-6LDOP1AtA&usqp=CAU"
-                alt="" width="100px">
+            <img src="{{ url('/image/recycle-bin.png') }}" class="trash">
         </a>
         <table class="table">
             <thead>

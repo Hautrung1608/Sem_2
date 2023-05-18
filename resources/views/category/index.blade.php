@@ -13,17 +13,16 @@
                 $(".alert").alert();
             </script>
         @endif
-        <a href="{{ route('category.create') }}" class="btn btn-success">ADD</a>
         <a href="{{ route('category.softDelete') }}" title="Thùng rác">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ13Fw8Nid9UTieyvpXQXvV50B-6LDOP1AtA&usqp=CAU"
-                alt="" width="100px">
+            <img src="{{ url('/image/recycle-bin.png') }}" class="trash">>
         </a>
         <table class="table">
             <thead>
                 <tr>
-                    <th>STT</th>
-                    <th>Tên danh mục</th>
-                    <th></th>
+                    <td>STT</td>
+                    <td>Tên danh mục</td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </thead>
             <tbody>
