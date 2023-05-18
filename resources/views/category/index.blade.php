@@ -14,7 +14,7 @@
             </script>
         @endif
         <a href="{{ route('category.softDelete') }}" title="Thùng rác">
-            <img src="{{ url('/image/recycle-bin.png') }}" class="trash">>
+            <img src="{{ url('/image/recycle-bin.png') }}" class="trash">
         </a>
         <table class="table">
             <thead>
