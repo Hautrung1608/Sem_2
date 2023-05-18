@@ -77,8 +77,22 @@
     margin-left: 100px;
 }
 
+.search-in {
+    border: 2px solid gray;
+    border-radius: 25px 0 0 25px;
+}
+
 .search {
-    border-radius: 10px !important;
+    background-color: white;
+    padding: 2px 12px 3px 12px;
+    border-radius: 0 25px 25px 0;
+    border: 2px solid gray;
+    border-left: 0px;
+    font-size: 20px;
+}
+
+.search:hover {
+    background-color: rgba(0, 0, 0, 0.307);
 }
 
 .nut {
