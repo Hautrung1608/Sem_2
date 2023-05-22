@@ -1,7 +1,7 @@
 @extends('master')
 @section('title','Home')
 @section('content')
-    <div class="jumbotron div-bg">
+    <div class="jumbotron">
         <h1 class="display-3">Jumbo heading</h1>
         <p class="lead">Jumbo helper text</p>
         <hr class="my-2">

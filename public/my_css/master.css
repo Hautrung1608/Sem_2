@@ -5,7 +5,7 @@
 }
 
 .avar-div {
-    margin-left: 10%;
+    right: -40%;
 }
 
 .user-name {
@@ -39,12 +39,6 @@
 .bg-text {
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0.199);
-}
-
-.div-bg {
-    background-color: rgb(0, 0, 0) !important;
-    background-color: rgba(0, 0, 0, 0.337) !important;
-    height: 660px;
 }
 
 .white-text {
