@@ -20,23 +20,25 @@ use App\Http\Controllers\CartController;
 |
 */
 Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/show/{id}', [HomeController::class, 'show'])->name('show');
+
 
 
 Route::middleware('auth')->prefix('admin')->group(function () {
 
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
-    
+
     //Category
-    
+
     Route::resource('category', CategoryController::class);
 
     Route::get('/category-softDelete', [CategoryController::class, 'softDelete'])->name('category.softDelete');
     Route::get('/restore/{id}', [CategoryController::class, 'restore'])->name('category.restore');
     Route::get('/forceDelete/{id}', [CategoryController::class, 'forceDelete'])->name('category.forceDelete');
-    
-    
+
+
     //Product
-    
+
     Route::resource('product', ProductController::class);
 
     Route::get('/product-softDelete', [ProductController::class, 'softDelete'])->name('product.softDelete');
