@@ -21,9 +21,8 @@
                 </div>
                 <div class="card-body col-lg-6">
                     <h4 class="card-title text-center">{{ $product->name }}</h4>
-
-                    <p>Giá: <del class="mr-5">{{ $product->price }}</del></p>
-                    <p class="card-text">Danh mục: {{ $product->categories->name }}</p>
+                    <p class="card-text">Gía: {{ $product->price }}</p>
+                    <p class="card-text">Danh mục: {{ $product->category->name }}</p>
                     <p class="card-text">Trạng thái: {!! $product->status
                         ? '<span class="badge badge-pill badge-primary">In stock</span>'
                         : '<span class="badge badge-pill badge-danger">Out of stock</span>' !!}</p>

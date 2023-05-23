@@ -16,7 +16,7 @@ class HomeController extends Controller
     }
 
     public function show($id){
-        $product = Product::find('id');
+        $product = Product::find($id);
         $category = Category::all();
         return view('show', compact('product', 'category'));
     }
