@@ -24,6 +24,7 @@
                     <td>Tên danh mục</td>
                     <td>Xuất xứ</td>
                     <td>Số lượng</td>
+                    <td>Cập nhật số lượng</td>
                     <td>Đơn giá</td>
                     <td>Ảnh</td>
                     <td>Trạng thái</td>
@@ -37,6 +38,7 @@
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->category->name }}</td>
                         <td>{{ $item->origin }}</td>
+                        <td>{{ $item->quantity }}</td>
                         <td>
                             <form method="POST" enctype="multipart/form-data" action="{{ route('product.upquantity', $item->id) }}">
                                 @csrf
