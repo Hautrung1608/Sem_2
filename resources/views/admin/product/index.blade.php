@@ -37,7 +37,17 @@
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->category->name }}</td>
                         <td>{{ $item->origin }}</td>
-                        <td>{{ $item->quantity }}</td>
+                        <td>
+                            <form method="POST" enctype="multipart/form-data" action="{{ route('product.upquantity', $item->id) }}">
+                                @csrf
+                                @method('POST')
+                                <div class="form-group">
+                                    <input type="numder" class="quanti" aria-describedby="emailHelp"
+                                        name="quantity" value="{{ $item->quantity }}">
+                                    <button class="quan-btn" >cập nhật</button>
+                                </div>
+                            </form>
+                        </td>
                         <td>{{ $item->price }}</td>
                         <td class='anh_product'>
                             <img src="{{ url('uploads') }}/{{ $item->image }}" alt="" widtd="50px">
@@ -53,7 +63,6 @@
                                     onclick="return confirm('Bạn có chắc chắn muốn xóa không ?')">Xóa</button>
                                 <a href="{{ route('product.edit', $item->id) }}" class="btn btn-primary">Sửa</a>
                             </form>
-
                         </td>
 
                     </tr>

@@ -44,6 +44,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/product-softDelete', [ProductController::class, 'softDelete'])->name('product.softDelete');
     Route::get('/prorestore/{id}', [ProductController::class, 'restore'])->name('product.restore');
     Route::get('/proforceDelete/{id}', [ProductController::class, 'forceDelete'])->name('product.forceDelete');
+    Route::post('/upquan/{id}', [ProductController::class, 'upquan'])->name('product.upquantity');
 });
 
 //login

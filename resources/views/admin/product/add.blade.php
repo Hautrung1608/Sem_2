@@ -34,7 +34,6 @@
                 <label for="exampleInputEmail1">Số lượng</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                     name="quantity" value="{{old('quantity')}}">
-
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Đơn giá</label>
