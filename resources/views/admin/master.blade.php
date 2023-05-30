@@ -16,7 +16,7 @@
       <div class="container-fluid mar-top bg-main">
         <div class="row">
             @include('admin.layout.tabbar')
-            <div class="col-lg-10 ">
+            <div class="col-lg-10 col-md-10">
               <div class="bg-text">
                 @yield('content')
               </div>

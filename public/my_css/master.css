@@ -164,3 +164,66 @@
     background-color: rgb(255, 255, 255);
     color: black;
 }
+
+/* responsive */
+@media only screen and (max-width: 768px) {
+    .bg-main {
+        height: 500px;
+
+    }
+
+    .logo {
+        margin-left: 10px;
+        width: 150px;
+    }
+
+    .search-in {
+        width: 170px !important;
+    }
+
+    .search-box {
+        margin-left: 10px;
+    }
+
+    .user-name {
+        width: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .trash {
+        width: 90px;
+        right: 0%;
+    }
+
+    .nut {
+        padding: 3px 6px 3px 6px;
+    }
+
+    .bg-text {
+        font-size: 9px;
+    }
+
+    .anh_product img {
+        width: 50px !important;
+    }
+
+    .quanti {
+        width: 40px;
+        height: 24px;
+    }
+
+    .quan-btn {
+        padding: 1px 2px 1px 2px;
+        font-size: 8px;
+        font-weight: bold;
+    }
+
+    .chu {
+        font-size: 10px;
+    }
+
+    .avar-div {
+        right: -2%;
+    }
+}

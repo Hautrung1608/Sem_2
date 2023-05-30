@@ -37,9 +37,9 @@
                             <form action="{{route('category.destroy',$item->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger"
+                                <button class="nut btn-danger"
                                     onclick="return confirm('Bạn có chắc chắn muốn xóa không ?')">Xóa</button>
-                                <a href="{{ route('category.edit', $item->id) }}" class="btn btn-primary">Sửa</a>
+                                <a href="{{ route('category.edit', $item->id) }}" class="nut btn-primary">Sửa</a>
                             </form>
 
                         </td>

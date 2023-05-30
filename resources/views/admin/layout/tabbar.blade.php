@@ -1,4 +1,4 @@
-<div class="col-md-2 text-center div-bg">
+<div class="col-md-2 text-center">
     <div class="">
       <div class="container nut">
         <a class="chu" href="{{route('category.index')}}"> Category</a>
