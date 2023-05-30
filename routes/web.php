@@ -21,6 +21,10 @@ use App\Http\Controllers\CartController;
 */
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/show/{id}', [HomeController::class, 'show'])->name('show');
+Route::get('/showCart', [CartController::class, 'showCart'])->name('showcart');
+Route::post('/cart/{id}', [CartController::class, 'add'])->name('cart.add');
+Route::post('update-cart/{id}', [CartController::class, 'update'])->name('cart.update');
+Route::get('delete-cart/{id}', [CartController::class, 'delete'])->name('cart.delete');
 
 
 

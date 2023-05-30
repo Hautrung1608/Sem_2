@@ -13,6 +13,7 @@
         </ul>
         <ul class="navbar-nav mt-2 mt-lg-0 col-lg-2 avar-div">
             <li class="nav-item dropdown">
+
                 <a class="nav-link dropdown-toggle user-name" href="#" id="dropdownId" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     <img src="{{ url('/image/default-avar.jpg') }}" alt="" class="avatar" />
@@ -27,5 +28,11 @@
                 </div>
             </li>
         </ul>
+        <form class="form-inline ml-3 my-2 my-lg-0">
+            <a href="{{ route('showcart') }}" class="btn btn-primary form-control mr-sm-2">
+                Cart
+                <span class="badge badge-primary">{{ $cart->getTotal() }}</span>
+            </a>
+        </form>
     </div>
 </nav>
