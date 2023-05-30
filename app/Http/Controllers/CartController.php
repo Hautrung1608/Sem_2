@@ -18,7 +18,7 @@ class CartController extends Controller
         $cart->add($product, $req->quantity);
         if ($cart) {
             // return redirect()->route('showcart')->with('success', 'Thêm mới thành công');
-            return redirect()->back()->with('success', 'Thêm mới thành công');
+            return redirect()->route('home')->with('success', 'Thêm mới thành công');
         }
     }
     public function showCart(Request $req)
