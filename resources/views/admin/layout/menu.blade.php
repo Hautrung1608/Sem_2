@@ -20,11 +20,12 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownId">
                     <a class="dropdown-item" href="{{ route('register.index') }}">Đăng kí</a>
-                   
+
                     <a class="dropdown-item" href="{{ route('admin.logout') }}">Đăng xuất</a>
-                    
+
                 </div>
             </li>
         </ul>
+        
     </div>
 </nav>

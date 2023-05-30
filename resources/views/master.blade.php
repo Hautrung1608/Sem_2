@@ -17,6 +17,7 @@
         <div class="row">
             @include('layout.tabbar')
             <div class="col-lg-10 col-sm-10">
+            <div class="col-lg-10 ">
               <div class="bg-text">
                 @yield('content')
               </div>
