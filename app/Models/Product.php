@@ -19,9 +19,10 @@ class Product extends Model
     }
     public function scopeSearch($query)
     {
-        if (request()->keyword) {
-            $query = $query->where('name', 'like', '%' . request()->keyword . '%');
+        if(request()->keywordpro){
+           $query = $query->where('name','like','%'.request()->keywordpro.'%');
         }
-        return $query;
+           return $query;
+        
     }
 }

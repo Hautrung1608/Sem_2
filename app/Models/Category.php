@@ -24,8 +24,8 @@ class Category extends Model
     }
     public function scopeSearch($query)
     {
-        if(request()->keyword){
-           $query = $query->where('name','like','%'.request()->keyword.'%');
+        if(request()->keywordcate){
+           $query = $query->where('name','like','%'.request()->keywordcate.'%');
         }
            return $query;
         

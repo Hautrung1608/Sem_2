@@ -10,6 +10,7 @@
                             aria-haspopup="true" aria-expanded="false">
                             Danh Mục
                         </a>
+                        
                         <div class="dropdown-menu dro" aria-labelledby="dropdownId">
                             @foreach ($category as $item)
                                 <a href="{{ route('danhmuc', $item->id) }}"

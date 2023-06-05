@@ -18,7 +18,9 @@
             text-align: center;
         }
         .dro{
-            width: 100px;
+            width: 200px;
+            margin-top: 135px;
+            background-color: blue;
         }
 
     </style>

@@ -3,17 +3,24 @@
     <div class="container-fruid">
         <div class="row">
             <div class="col-lg-2">
-                <ul class="list-group">
-                    <li class="list-group-item align-items-center active text-center">
-                        Danh mục
+                <ul class="navbar-nav avar-div">
+                    <li class="nav-item dropdown">
 
+                        <a class="nav-link dropdown-toggle danhmuc" href="#" id="dropdownId" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Danh Mục
+                        </a>
+                        
+                        <div class="dropdown-menu dro" aria-labelledby="dropdownId">
+                            @foreach ($categories as $item)
+                                <a href="{{ route('danhmuc', $item->id) }}"
+                                    class="list-group-item btn btn-outline-primary rounded-0"
+                                    >{{ $item->name }}</a>
+                            @endforeach
+                        </div>
                     </li>
-                    @foreach ($categories as $item)
-                        <a href="{{ route('danhmuc', $item->id) }}" class="list-group-item btn "
-                            width="100%">{{ $item->name }}</a>
-                    @endforeach
                 </ul>
-
+            
             </div>
             <div class="col-lg-10">
                 <div class="container-fruid mt-5">
