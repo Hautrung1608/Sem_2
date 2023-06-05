@@ -7,57 +7,50 @@ INSERT INTO
         `updated_at`,
         `deleted_at`
     )
-VALUES (NULL, 'áo', '1', NULL, NULL, NULL), (
-        NULL,
+VALUES ('1', 'áo', '1', NULL, NULL, NULL), (
+        '2',
         'quần',
         '0',
         NULL,
         NULL,
         NULL
     ), (
-        NULL,
+        '3',
         'giày',
         '1',
         NULL,
         NULL,
         NULL
-    ), (
-        NULL,
-        'dép',
-        '0',
-        NULL,
-        NULL,
-        NULL
-    ), (
-        NULL,
+    ), ('4', 'dép', '0', NULL, NULL, NULL), (
+        '5',
         'kính',
         '0',
         NULL,
         NULL,
         NULL
     ), (
-        NULL,
+        '6',
         'điện thoại',
         '0',
         NULL,
         NULL,
         NULL
     ), (
-        NULL,
+        '7',
         'tai nghe',
         '0',
         NULL,
         NULL,
         NULL
     ), (
-        NULL,
+        '8',
         'bông tai',
         '0',
         NULL,
         NULL,
         NULL
     ), (
-        NULL,
+        '9',
         'nhẫn',
         '0',
         NULL,
@@ -82,7 +75,7 @@ INSERT INTO
 VALUES (
         NULL,
         'áo ba lỗ',
-        '2',
+        '1',
         'Trung quốc',
         '12',
         '100000',
@@ -94,7 +87,7 @@ VALUES (
     ), (
         NULL,
         'áo sơ mi',
-        '2',
+        '1',
         'Nhật bản',
         '53',
         '120000',
@@ -106,7 +99,7 @@ VALUES (
     ), (
         NULL,
         'quần kaki',
-        '3',
+        '2',
         'Việt Nam',
         '120',
         '200000',
@@ -118,7 +111,7 @@ VALUES (
     ), (
         NULL,
         'Kính chống nắng',
-        '6',
+        '5',
         'Wakanda',
         '2',
         '100000000',
@@ -130,7 +123,7 @@ VALUES (
     ), (
         NULL,
         'giày leo núi',
-        '4',
+        '3',
         'Thụy Điển',
         '24',
         '1900000',
@@ -142,7 +135,7 @@ VALUES (
     ), (
         NULL,
         'dép tổ ong',
-        '5',
+        '4',
         'Việt Nam',
         '1200',
         '300000',
@@ -154,7 +147,7 @@ VALUES (
     ), (
         NULL,
         'Nhẫn vàng 99999k',
-        '10',
+        '9',
         'DuBai',
         '1',
         '900000000',
