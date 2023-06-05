@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
@@ -20,28 +21,45 @@ use App\Http\Controllers\CartController;
 |
 */
 Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/show/{id}', [HomeController::class, 'show'])->name('show');
+
+Route::get('/showCart', [CartController::class, 'showCart'])->name('showcart');
+Route::post('/cart/{id}', [CartController::class, 'add'])->name('cart.add');
+Route::post('update-cart/{id}', [CartController::class, 'update'])->name('cart.update');
+Route::get('delete-cart/{id}', [CartController::class, 'delete'])->name('cart.delete');
+
+Route::get('/danhmuc/{id}', [HomeController::class, 'danhmuc'])->name('danhmuc');
+
+
 
 
 Route::middleware('auth')->prefix('admin')->group(function () {
 
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
-    
+
     //Category
-    
+
     Route::resource('category', CategoryController::class);
 
     Route::get('/category-softDelete', [CategoryController::class, 'softDelete'])->name('category.softDelete');
     Route::get('/restore/{id}', [CategoryController::class, 'restore'])->name('category.restore');
     Route::get('/forceDelete/{id}', [CategoryController::class, 'forceDelete'])->name('category.forceDelete');
-    
-    
+
+
     //Product
-    
+
     Route::resource('product', ProductController::class);
 
     Route::get('/product-softDelete', [ProductController::class, 'softDelete'])->name('product.softDelete');
     Route::get('/prorestore/{id}', [ProductController::class, 'restore'])->name('product.restore');
     Route::get('/proforceDelete/{id}', [ProductController::class, 'forceDelete'])->name('product.forceDelete');
+    Route::post('/upquan/{id}', [ProductController::class, 'upquan'])->name('product.upquantity');
+
+    //Account
+
+    Route::resource('account', AccountController::class);
+
+
 });
 
 //login

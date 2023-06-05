@@ -6,6 +6,8 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Product\ProductStoreRequest;
+use App\Http\Requests\Product\ProductUpdateRequest;
 
 class ProductController extends Controller
 {
@@ -14,7 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = Product::all();
+        $product = Product::orderByDesc('id')->paginate(6);
         return view('admin.product.index',compact('product'));
     }
 
@@ -31,25 +33,10 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $req)
+    public function store(ProductStoreRequest $req)
     {
-        $req->validate([
-            'name' =>'required|min:3|unique:products,name,',
-            'price' =>'required|numeric|min:1',
-            'file' =>'mimes:jqg,png,web'
-
-        ],[
-            'name.required' =>'Tên không được để rỗng',
-            'name.unique' =>$req->name.'đã tồn tại',
-            'name.unique.required' =>$req->name.'đã tồn tại',
-            'price.required' =>'Giá không được để rỗng',
-            'price.numeric' =>'Không đúng định dạng',
-            'price.numeric.required' =>'Không đúng định dạng',
-            'price.min' =>'Giá không nhỏ hơn 1',
-            'price.min.required' =>'Giá không nhỏ hơn 1',
-            'file.mimes' => 'Ảnh không đúng định dạng',
-            'file.mimes.required' => 'Ảnh không đúng định dạng'
-        ]);
+        $req->validated();
+        
         if($req->has('file')){
             $file = $req->file;
             $file_name = $file->getClientOriginalName();
@@ -59,7 +46,7 @@ class ProductController extends Controller
         try {
             $req->merge(['image' => $file_name]);
             Product::create($req->all());
-            return redirect()->route('admin.product.index')->with('success', 'Thêm mới thành công');
+            return redirect()->route('product.index')->with('success', 'Thêm mới thành công');
         } catch (\Throwable $th) {
             
         }
@@ -87,27 +74,13 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $req, string $id)
+    public function update(ProductUpdateRequest $req, $id)
     {
-        $req->validate([
-            'name' =>'required|min:3|unique:products,name,'.$id,
-            'price' =>'required|numeric|min:1',
-            'file' =>'mimes:jqg,png,web'
-
-        ],[
-            'name.required' =>'Tên không được để rỗng',
-            'name.unique' =>$req->name.'đã tồn tại',
-            'name.unique.required' =>$req->name.'đã tồn tại',
-            'price.required' =>'Giá không được để rỗng',
-            'price.numeric' =>'Không đúng định dạng',
-            'price.numeric.required' =>'Không đúng định dạng',
-            'price.min' =>'Giá không nhỏ hơn 1',
-            'price.min.required' =>'Giá không nhỏ hơn 1',
-            'file.mimes' => 'Ảnh không đúng định dạng',
-            'file.mimes.required' => 'Ảnh không đúng định dạng'
-        ]);
+       
         $product = Product::find($id);
+        $req->validated();
         $file_name = $product->image;
+
         if($req->has('file')){
             $file = $req->file;
             $file_name = $file->getClientOriginalName();
@@ -117,7 +90,7 @@ class ProductController extends Controller
         try {
             $req->merge(['image' => $file_name]);
             $product->update($req->all());
-            return redirect()->route('admin.product.index')->with('success', 'Cập nhật thành công');
+            return redirect()->route('product.index')->with('success', 'Cập nhật thành công');
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', "Không thể cập nhật danh mục");
             
@@ -159,6 +132,15 @@ class ProductController extends Controller
             return redirect()->route('admin.product.index');
         } catch (\Throwable $th) {
             throw $th; 
+        }
+    }
+    public function upquan(Request $req, string $id)
+    {
+        $product=Product::find($id);
+        if($product) {
+            $product->quantity = $req->quantity;
+            $product->save();
+            return redirect()->back();
         }
     }
 }

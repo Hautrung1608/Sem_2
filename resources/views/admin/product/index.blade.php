@@ -24,6 +24,7 @@
                     <td>Tên danh mục</td>
                     <td>Xuất xứ</td>
                     <td>Số lượng</td>
+                    <td>Cập nhật số lượng</td>
                     <td>Đơn giá</td>
                     <td>Ảnh</td>
                     <td>Trạng thái</td>
@@ -38,22 +39,32 @@
                         <td>{{ $item->category->name }}</td>
                         <td>{{ $item->origin }}</td>
                         <td>{{ $item->quantity }}</td>
+                        <td>
+                            <form method="POST" enctype="multipart/form-data" action="{{ route('product.upquantity', $item->id) }}">
+                                @csrf
+                                @method('POST')
+                                <div class="form-group">
+                                    <input type="numder" class="quanti" aria-describedby="emailHelp"
+                                        name="quantity" value="{{ $item->quantity }}">
+                                    <button class="quan-btn" >cập nhật</button>
+                                </div>
+                            </form>
+                        </td>
                         <td>{{ $item->price }}</td>
                         <td class='anh_product'>
                             <img src="{{ url('uploads') }}/{{ $item->image }}" alt="" widtd="50px">
                         </td>
                         <td>{!! $item->status
-                            ? '<span class="badge badge-pill badge-primary">In stock</span>'
-                            : '<span class="badge badge-pill badge-danger">Out of stock</span>' !!}</td>
+                            ? '<span class="badge badge-pill badge-primary">Còn hàng</span>'
+                            : '<span class="badge badge-pill badge-danger">Hết hàng</span>' !!}</td>
                         <td>
                             <form action="{{ route('product.destroy', $item->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger"
+                                <button class="nut btn-danger"
                                     onclick="return confirm('Bạn có chắc chắn muốn xóa không ?')">Xóa</button>
-                                <a href="{{ route('product.edit', $item->id) }}" class="btn btn-primary">Sửa</a>
+                                <a href="{{ route('product.edit', $item->id) }}" class="nut btn-primary">Sửa</a>
                             </form>
-
                         </td>
 
                     </tr>
@@ -62,6 +73,6 @@
 
             </tbody>
         </table>
-
+        {{ $product->links() }}
     </div>
-@stop
+@endsection

@@ -60,13 +60,13 @@
                     <label class="form-check-label">
                         <input class="form-check-input" type="radio" name="status" id="" value="1"
                             {{ $product->status ? 'checked' : '' }}>
-                        In Stock
+                        Còn hàng
                     </label>
                 </div>
                 <div class="form-check form-check-inline">
                     <label class="form-check-label">
                         <input class="form-check-input" type="radio" name="status" id="" value="0"
-                            {{ !$product->status ? 'checked' : '' }}> Out of stock
+                            {{ !$product->status ? 'checked' : '' }}> Hết hàng
                     </label>
                 </div>
             </div>

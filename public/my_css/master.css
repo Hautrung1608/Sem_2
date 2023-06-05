@@ -5,7 +5,7 @@
 }
 
 .avar-div {
-    margin-left: 10%;
+    right: -40%;
 }
 
 .user-name {
@@ -36,15 +36,16 @@
 
 }
 
+.bg-blur {
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.504);
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
 .bg-text {
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0.199);
-}
-
-.div-bg {
-    background-color: rgb(0, 0, 0) !important;
-    background-color: rgba(0, 0, 0, 0.337) !important;
-    height: 660px;
 }
 
 .white-text {
@@ -145,4 +146,91 @@
     z-index: 2000;
     right: 0.1%;
     bottom: 0.3%;
+}
+
+.quanti {
+    width: 50px;
+    height: 34px;
+}
+
+.quan-btn {
+    padding: 5px 12px 5px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none !important;
+    color: white;
+    border-radius: 0.25rem;
+    display: inline-block;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgba(253, 253, 253, 0.434);
+}
+
+.quan-btn:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+/* responsive */
+@media only screen and (max-width: 768px) {
+    .bg-main {
+        height: 500px;
+
+    }
+
+    .logo {
+        margin-left: 10px;
+        width: 150px;
+    }
+
+    .search-in {
+        width: 170px !important;
+    }
+
+    .search-box {
+        margin-left: 10px;
+    }
+
+    .user-name {
+        width: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .trash {
+        width: 90px;
+        right: 0%;
+    }
+
+    .nut {
+        padding: 3px 6px 3px 6px;
+    }
+
+    .bg-text {
+        font-size: 9px;
+    }
+
+    .anh_product img {
+        width: 50px !important;
+    }
+
+    .quanti {
+        width: 40px;
+        height: 24px;
+    }
+
+    .quan-btn {
+        padding: 1px 2px 1px 2px;
+        font-size: 8px;
+        font-weight: bold;
+    }
+
+    .chu {
+        font-size: 10px;
+    }
+
+    .avar-div {
+        right: -2%;
+    }
 }

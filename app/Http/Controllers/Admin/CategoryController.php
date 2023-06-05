@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Requests\Category\CategoryStoreRequest;
+use App\Http\Requests\Category\CategoryUpdateRequest;
 
 class CategoryController extends Controller
 {
@@ -13,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::search()->paginate(10)->withQueryString();
+        $category = Category::search()->orderBy('id', 'desc')->paginate(6);
 
         return view('admin.category.index', compact('category'));
     }
@@ -29,19 +31,14 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $req)
+    public function store(CategoryStoreRequest $req)
     {
-        $req->validate([
-            'name' => 'required|min:2|unique:categories',
-        ], [
-            'name.required' => 'Danh mục không được để rỗng',
-            'name.unique' => 'Danh mục' . $req->name . 'đã tồn tại',
-            'name.unique.required' => 'Danh mục' . $req->name . 'đã tồn tại'
-
-        ]);
-        $category = Category::create($req->all());
-        if ($category) {
-            return redirect()->route('admin.category.index')->with('success', 'Thêm mới thành công');
+        $form_data = $req->all('name', 'status');
+        try {
+            Category::create($form_data);
+            return redirect()->route('category.index')->with('success', 'Thêm mới thành công');
+        } catch (\Throwable $th) {
+            return redirect()->route('category.index')->with('success', 'IThêm mới không thành công');
         }
     }
 
@@ -50,7 +47,7 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        //
+
     }
 
     /**
@@ -65,26 +62,19 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $req, string $id)
+    public function update(CategoryUpdateRequest $req, Category $category)
     {
-        $req->validate([
-            'name' => 'required|min:2|unique:categories,name,' . $id,
-        ], [
-            'name.required' => 'Danh mục không được để rỗng',
-            'name.unique' => 'Danh mục' . $req->name . 'đã tồn tại',
-            'name.unique.required' => 'Danh mục' . $req->name . 'đã tồn tại'
+        $form_data = $req->all('name', 'status');
 
-        ]);
-        $category = Category::find($id);
         try {
-            $category->update($req->all());
-            return redirect()->route('admin.category.index')->with('success', 'Cập nhật thành công');
+            $category->update($form_data);
+            return redirect()->route('category.index')->with('success', "Cập nhật thành công");
         } catch (\Throwable $th) {
-            return redirect()->route('admin.category.index')->with('error', "Không thể cập nhật danh mục");
+            return redirect()->route('category.index')->with('success', "Cập nhật thất bại");
         }
     }
 
-    /**
+    /** 
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
@@ -93,7 +83,7 @@ class CategoryController extends Controller
 
         try {
             $category->delete();
-            return redirect()->route('admin.category.index')->with('success', 'Xóa thành công');
+            return redirect()->route('category.index')->with('success', 'Xóa thành công');
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', "Không thể xóa danh mục $category->name vì đã tồn tại trong Sản phẩm");
         }
@@ -108,7 +98,7 @@ class CategoryController extends Controller
     {
         try {
             Category::withTrashed()->find($id)->restore();
-            return redirect()->route('admin.category.index');
+            return redirect()->route('category.index');
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -118,7 +108,7 @@ class CategoryController extends Controller
     {
         try {
             Category::withTrashed()->find($id)->forceDelete();
-            return redirect()->route('admin.category.index');
+            return redirect()->route('category.index');
         } catch (\Throwable $th) {
             throw $th;
         }

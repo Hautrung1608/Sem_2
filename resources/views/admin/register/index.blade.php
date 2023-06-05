@@ -56,6 +56,9 @@
                                 <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
+
+                        
+
                         <div class="row">
                             <div class="col-7">
                                 <a href="{{ route('login.index') }}" class="text-center">Đã có tài khoản</a>

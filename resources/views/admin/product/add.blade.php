@@ -34,7 +34,6 @@
                 <label for="exampleInputEmail1">Số lượng</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                     name="quantity" value="{{old('quantity')}}">
-
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Đơn giá</label>
@@ -53,13 +52,13 @@
                 <div class="form-check form-check-inline">
                     <label class="form-check-label">
                         <input class="form-check-input" type="radio" name="status" id="" value="1" checked>
-                        In Stock
+                        Còn hàng
                     </label>
                 </div>
                 <div class="form-check form-check-inline">
                     <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="status" id="" value="0"> Out of
-                        stock
+                        <input class="form-check-input" type="radio" name="status" id="" value="0"> 
+                        Hết hàng
                     </label>
                 </div>
             </div>
