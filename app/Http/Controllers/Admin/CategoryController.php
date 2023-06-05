@@ -41,7 +41,7 @@ class CategoryController extends Controller
         ]);
         $category = Category::create($req->all());
         if ($category) {
-            return redirect()->route('admin.category.index')->with('success', 'Thêm mới thành công');
+            return redirect()->route('category.index')->with('success', 'Thêm mới thành công');
         }
     }
 
@@ -78,13 +78,13 @@ class CategoryController extends Controller
         $category = Category::find($id);
         try {
             $category->update($req->all());
-            return redirect()->route('admin.category.index')->with('success', 'Cập nhật thành công');
+            return redirect()->route('category.index')->with('success', 'Cập nhật thành công');
         } catch (\Throwable $th) {
-            return redirect()->route('admin.category.index')->with('error', "Không thể cập nhật danh mục");
+            return redirect()->route('category.index')->with('error', "Không thể cập nhật danh mục");
         }
     }
 
-    /**
+    /** 
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
@@ -93,7 +93,7 @@ class CategoryController extends Controller
 
         try {
             $category->delete();
-            return redirect()->route('admin.category.index')->with('success', 'Xóa thành công');
+            return redirect()->route('category.index')->with('success', 'Xóa thành công');
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', "Không thể xóa danh mục $category->name vì đã tồn tại trong Sản phẩm");
         }
@@ -108,7 +108,7 @@ class CategoryController extends Controller
     {
         try {
             Category::withTrashed()->find($id)->restore();
-            return redirect()->route('admin.category.index');
+            return redirect()->route('category.index');
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -118,7 +118,7 @@ class CategoryController extends Controller
     {
         try {
             Category::withTrashed()->find($id)->forceDelete();
-            return redirect()->route('admin.category.index');
+            return redirect()->route('category.index');
         } catch (\Throwable $th) {
             throw $th;
         }

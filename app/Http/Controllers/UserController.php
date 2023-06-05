@@ -37,7 +37,7 @@ class UserController extends Controller
     public function postLogon(Request $req)
     {
         try {
-            if (Auth::attempt(['email' => $req->email, 'password' => $req->password, 'role' => 1])) {
+            if (Auth::attempt(['email' => $req->email, 'password' => $req->password])) {
                 return redirect()->route('admin.index');
             } else {
                 return redirect()->back()->with('error', 'Email hoặc mật khẩu không đúng');
@@ -60,7 +60,7 @@ class UserController extends Controller
     public function logout(Request $req)
     {
         try {
-            if (Auth::attempt(['email' => $req->email, 'password' => $req->password,'role'=>2])) {
+            if (Auth::attempt(['email' => $req->email, 'password' => $req->password])) {
                 Auth::logout();
                 return redirect()->route('home');
             } else {

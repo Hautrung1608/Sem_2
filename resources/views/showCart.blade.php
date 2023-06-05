@@ -15,7 +15,7 @@
     @endif
 
     <div class="container mt-5">
-        <h1 class="text-center bg-primary">Cart</h1>
+        <h1 class="text-center bg-primary">Hóa Đơn</h1>
         <table class="table">
             <thead>
                 <tr>

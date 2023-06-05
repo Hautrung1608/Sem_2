@@ -25,8 +25,8 @@
                     <p class="card-text">Danh mục: {{ $product->category->name }}</p>
 
                     <p class="card-text">Trạng thái: {!! $product->status
-                        ? '<span class="badge badge-pill badge-primary">In stock</span>'
-                        : '<span class="badge badge-pill badge-danger">Out of stock</span>' !!}</p>
+                        ? '<span class="badge badge-pill badge-primary">Còn hàng</span>'
+                        : '<span class="badge badge-pill badge-danger">Hết hàng</span>' !!}</p>
 
                     <form action=" {{ route('cart.add',$product->id) }} " method="POST">
                         @csrf
@@ -34,7 +34,7 @@
                             <a class="">Số lượng:</a>
                             <input type="text" value="1" class="form-control" name="quantity">
                         </div>
-                        <button type="submit" class="btn btn-block btn-success">Add to cart</button>
+                        <button type="submit" class="btn btn-block btn-success">Thêm hóa đơn</button>
                     </form>
                 </div>
             </div>

@@ -6,6 +6,7 @@ use App\Models\Category;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use App\Helper\Cart;
+use App\Helper\ProductTotal;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
        view()->composer('*',function($view){
         $cats = Category::get();
         $cart = new Cart();
+        // $productTotal = new ProductTotal();
         $view->with(compact('cats','cart'));
        });
 

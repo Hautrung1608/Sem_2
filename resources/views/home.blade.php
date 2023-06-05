@@ -28,9 +28,10 @@
                                         <h4 class="card-title text-center">{{ $item->name }}</h4>
                                         <p class="card-text">Xuất Xứ: {{ $item->origin }}</p>
                                         <p class="card-text ">Danh mục: {{ $item->category->name }}</p>
+                                        <p class="card-text ">Số lượng: {{ $item->quantity}}</p>
                                         <p class="card-text">Trạng thái: {!! $item->status
-                                            ? '<span class="badge badge-pill badge-primary">In stock</span>'
-                                            : '<span class="badge badge-pill badge-danger">Out of stock</span>' !!}</p>
+                                            ? '<span class="badge badge-pill badge-primary">Còn hàng</span>'
+                                            : '<span class="badge badge-pill badge-danger">Hết hàng</span>' !!}</p>
                                     </div>
                                     <a href="{{ route('show', $item->id) }}"><button class="btn btn-primary">Xem
                                             chi tiết</button></a>
