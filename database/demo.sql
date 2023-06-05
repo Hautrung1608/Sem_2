@@ -7,50 +7,50 @@ INSERT INTO
         `updated_at`,
         `deleted_at`
     )
-VALUES ('1', 'áo', '1', NULL, NULL, NULL), (
-        '2',
+VALUES ('', 'áo', '1', NULL, NULL, NULL), (
+        '',
         'quần',
         '0',
         NULL,
         NULL,
         NULL
     ), (
-        '3',
+        '',
         'giày',
         '1',
         NULL,
         NULL,
         NULL
-    ), ('4', 'dép', '0', NULL, NULL, NULL), (
-        '5',
+    ), ('', 'dép', '0', NULL, NULL, NULL), (
+        '',
         'kính',
         '0',
         NULL,
         NULL,
         NULL
     ), (
-        '6',
+        '',
         'điện thoại',
         '0',
         NULL,
         NULL,
         NULL
     ), (
-        '7',
+        '',
         'tai nghe',
         '0',
         NULL,
         NULL,
         NULL
     ), (
-        '8',
+        '',
         'bông tai',
         '0',
         NULL,
         NULL,
         NULL
     ), (
-        '9',
+        '',
         'nhẫn',
         '0',
         NULL,

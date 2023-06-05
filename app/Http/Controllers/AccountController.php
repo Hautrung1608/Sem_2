@@ -87,7 +87,7 @@ class AccountController extends Controller
         if (Hash::check($request->password, User::find($id)->password)) {
             $password = Hash::make($request->password);
         } else {
-            return redirect()->back()->with('success', 'The Old Password does not match');
+            return redirect()->back()->with('success', 'Không đúng mất khẩu cũ');
         }
         User::find($id)->update([
             'name' => $request->name,
@@ -97,7 +97,7 @@ class AccountController extends Controller
             'role' => $request->role,
         ]);
 
-        return redirect()->route('account.index')->with('success', "Update Data Successfully");
+        return redirect()->route('account.index')->with('success', "Cập nhật thành công");
     }
 
     /**
@@ -109,24 +109,7 @@ class AccountController extends Controller
     public function destroy($id)
     {
         User::find($id)->delete();
-        return redirect()->route('account.recycle_bin')->with('success', 'Delete Data Successfully');
+        return redirect()->back()->with('success', 'Xóa thành công');
     }
 
-    public function recycle_bin()
-    {
-        $accounts = User::onlyTrashed()->get();
-        return view('admin.account.trash', compact('accounts'));
-    }
-
-    public function restored($id)
-    {
-        User::onlyTrashed()->find($id)->restore();
-        return redirect()->route('account.index')->with('success', 'Restore Sucessfully');
-    }
-
-    public function force_delete($id)
-    {
-        User::onlyTrashed()->find($id)->forceDelete();
-        return redirect()->route('account.index')->with('success', 'Delete Sucessfully');
-    }
 }

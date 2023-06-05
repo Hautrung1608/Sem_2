@@ -18,9 +18,6 @@
         <div class="row align-items-center">
             <div class="add col-lg-6">
                 <a href="{{ route('account.create') }}" class="btn btn-outline-success rounded-0">Add &plus;</a>
-                <a href="{{ route('account.recycle_bin') }}" class="btn btn-outline-warning rounded-0">
-                    <i class="fa fa-trash"></i>
-                </a>
             </div>
         </div>
 
