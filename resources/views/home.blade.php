@@ -4,10 +4,10 @@
         <div class="row">
             <div class="col-lg-2">
                 <ul class="list-group">
-                    <li class="list-group-item align-items-center active text-center">
+                    <li class="bg-blur align-items-center active text-center chu">
                         Danh mục
                         @foreach ($category as $item)
-                            <a href="{{ route('danhmuc', $item->id) }}" class="list-group-item btn "
+                            <a href="{{ route('danhmuc', $item->id) }}" class="list-group-item chu btn btn-outline-primary"
                                 width="100%">{{ $item->name }}</a>
                         @endforeach
                     </li>
