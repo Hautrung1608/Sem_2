@@ -55,8 +55,8 @@
                             <img src="{{ url('uploads') }}/{{ $item->image }}" alt="" widtd="50px">
                         </td>
                         <td>{!! $item->status
-                            ? '<span class="badge badge-pill badge-primary">In stock</span>'
-                            : '<span class="badge badge-pill badge-danger">Out of stock</span>' !!}</td>
+                            ? '<span class="badge badge-pill badge-primary">Còn hàng</span>'
+                            : '<span class="badge badge-pill badge-danger">Hết hàng</span>' !!}</td>
                         <td>
                             <form action="{{ route('product.destroy', $item->id) }}" method="POST">
                                 @csrf
@@ -73,6 +73,6 @@
 
             </tbody>
         </table>
-
+        {{ $product->links() }}
     </div>
-@stop
+@endsection

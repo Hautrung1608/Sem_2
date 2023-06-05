@@ -17,7 +17,7 @@ class AccountController extends Controller
      */
     public function index()
     {
-        $accounts = User::orderBy('role','desc')->paginate(10);
+        $accounts = User::orderBy('role','desc')->paginate(5);
         return view('admin.account.index',compact('accounts'));
     }
 

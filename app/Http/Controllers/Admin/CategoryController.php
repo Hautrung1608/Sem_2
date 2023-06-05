@@ -13,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::search()->paginate(10)->withQueryString();
+        $category = Category::search()->orderBy('id', 'desc')->paginate(3);
 
         return view('admin.category.index', compact('category'));
     }

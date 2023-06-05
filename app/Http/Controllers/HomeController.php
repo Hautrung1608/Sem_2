@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $product = Product::orderByDesc('id')->paginate(6);
+        $product = Product::orderByDesc('id')->paginate(8);
         $category = Category::all();
         return view('home',compact('product', 'category'));
     }

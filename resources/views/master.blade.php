@@ -11,6 +11,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url('/my_css/master.css') }}">
+    <style>
+
+        .danhmuc{
+            font-size: 25px;
+            text-align: center;
+        }
+        .dro{
+            width: 100px;
+        }
+
+    </style>
 </head>
 
 <body>

@@ -61,5 +61,6 @@
 
             </tbody>
         </table>
+        {{ $accounts->links() }}
     </div>
 @endsection

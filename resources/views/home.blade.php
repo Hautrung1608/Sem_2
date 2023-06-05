@@ -3,16 +3,23 @@
     <div class="container-fruid">
         <div class="row">
             <div class="col-lg-2">
-                <ul class="list-group">
-                    <li class="bg-blur align-items-center active text-center chu">
-                        Danh mục
-                        @foreach ($category as $item)
-                            <a href="{{ route('danhmuc', $item->id) }}" class="list-group-item chu btn btn-outline-primary"
-                                width="100%">{{ $item->name }}</a>
-                        @endforeach
-                    </li>
+                <ul class="navbar-nav avar-div">
+                    <li class="nav-item dropdown">
 
+                        <a class="nav-link dropdown-toggle danhmuc" href="#" id="dropdownId" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Danh Mục
+                        </a>
+                        <div class="dropdown-menu dro" aria-labelledby="dropdownId">
+                            @foreach ($category as $item)
+                                <a href="{{ route('danhmuc', $item->id) }}"
+                                    class="list-group-item btn btn-outline-primary rounded-0"
+                                    >{{ $item->name }}</a>
+                            @endforeach
+                        </div>
+                    </li>
                 </ul>
+               
 
             </div>
             <div class="col-lg-10">
@@ -28,7 +35,7 @@
                                         <h4 class="card-title text-center">{{ $item->name }}</h4>
                                         <p class="card-text">Xuất Xứ: {{ $item->origin }}</p>
                                         <p class="card-text ">Danh mục: {{ $item->category->name }}</p>
-                                        <p class="card-text ">Số lượng: {{ $item->quantity}}</p>
+                                        <p class="card-text ">Số lượng: {{ $item->quantity }}</p>
                                         <p class="card-text">Trạng thái: {!! $item->status
                                             ? '<span class="badge badge-pill badge-primary">Còn hàng</span>'
                                             : '<span class="badge badge-pill badge-danger">Hết hàng</span>' !!}</p>

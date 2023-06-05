@@ -10,11 +10,18 @@ class Product extends Model
 {
     use SoftDeletes;
     protected $table = 'products';
-    protected $fillable = ['name', 'cate_id','origin','quantity','price','image','status'];
+    protected $fillable = ['name', 'cate_id', 'origin', 'quantity', 'price', 'image', 'status'];
     public $timestamps = false;
 
     public function category()
     {
         return $this->belongsTo(Category::class, 'cate_id', 'id');
+    }
+    public function scopeSearch($query)
+    {
+        if (request()->keyword) {
+            $query = $query->where('name', 'like', '%' . request()->keyword . '%');
+        }
+        return $query;
     }
 }

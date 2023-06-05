@@ -52,13 +52,13 @@
                 <div class="form-check form-check-inline">
                     <label class="form-check-label">
                         <input class="form-check-input" type="radio" name="status" id="" value="1" checked>
-                        In Stock
+                        Còn hàng
                     </label>
                 </div>
                 <div class="form-check form-check-inline">
                     <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="status" id="" value="0"> Out of
-                        stock
+                        <input class="form-check-input" type="radio" name="status" id="" value="0"> 
+                        Hết hàng
                     </label>
                 </div>
             </div>
