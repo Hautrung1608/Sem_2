@@ -59,7 +59,7 @@ class ProductController extends Controller
         try {
             $req->merge(['image' => $file_name]);
             Product::create($req->all());
-            return redirect()->route('admin.product.index')->with('success', 'Thêm mới thành công');
+            return redirect()->route('product.index')->with('success', 'Thêm mới thành công');
         } catch (\Throwable $th) {
             
         }
@@ -117,7 +117,7 @@ class ProductController extends Controller
         try {
             $req->merge(['image' => $file_name]);
             $product->update($req->all());
-            return redirect()->route('admin.product.index')->with('success', 'Cập nhật thành công');
+            return redirect()->route('product.index')->with('success', 'Cập nhật thành công');
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', "Không thể cập nhật danh mục");
             

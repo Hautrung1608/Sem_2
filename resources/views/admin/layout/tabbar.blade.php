@@ -12,5 +12,12 @@
       <div class="container nut">
         <a class="chu" href="{{ route('product.create') }}">Add Product</a>
       </div>
+      <div class="container nut">
+        <a class="chu" href="{{ route('account.index') }}">View list</a>
+      </div>
+      <div class="container nut">
+        <a class="chu" href="{{ route('account.create') }}">Add Acount</a>
+      </div>
+      
     </div>
 </div>

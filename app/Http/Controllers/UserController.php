@@ -20,7 +20,7 @@ class UserController extends Controller
     {
 
         try {
-            if (Auth::attempt(['email' => $req->email, 'password' => $req->password, 'role' => 2])) {
+            if (Auth::attempt(['email' => $req->email, 'password' => $req->password])) {
                 return redirect()->route('home');
             } else {
                 return redirect()->back()->with('error', 'Email hoặc mật khẩu không đúng');
@@ -79,17 +79,13 @@ class UserController extends Controller
     }
     public function postRegister(PostRegisterRequest $req)
     {
-        $req->password = Hash::make($req->password);
+        $password = Hash::make($req->password);
+        User::create([
+            "name" => $req->name,
+            "email" => $req->email,
+            "password" => $password,
+        ]);
 
-        $req->merge(['password' => $req->password]);
-        try {
-            if (User::create($req->all())) {
-                return redirect()->route('login.index')->with('success', 'Đăng kí thành công');
-            } else {
-                return redirect()->back()->with('error', 'Đăng kí không thành công');
-            }
-        } catch (\Throwable $th) {
-            //throw $th;
-        }
+        return redirect()->route('login.index')->with('success', 'Đăng kí thành công');
     }
 }

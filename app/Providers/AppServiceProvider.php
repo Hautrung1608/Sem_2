@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-       Paginator::useBootstrapFive();
+        Paginator::useBootstrap();
 
        view()->composer('*',function($view){
         $cats = Category::get();

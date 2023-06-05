@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
@@ -53,6 +54,16 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/prorestore/{id}', [ProductController::class, 'restore'])->name('product.restore');
     Route::get('/proforceDelete/{id}', [ProductController::class, 'forceDelete'])->name('product.forceDelete');
     Route::post('/upquan/{id}', [ProductController::class, 'upquan'])->name('product.upquantity');
+
+    //Account
+
+    Route::resource('account', AccountController::class);
+
+    Route::get('/account/recycle-bin', [AccountController::class, 'recycle_bin'])->name('account.recycle_bin');
+    Route::get('/account/restore/{id}', [AccountController::class, 'restored'])->name('account.restore');
+    Route::delete('/account/delete/{id}', [AccountController::class, 'force_delete'])->name('account.force_delete');
+
+
 });
 
 //login
