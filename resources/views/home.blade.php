@@ -14,7 +14,7 @@
                         <div class="dropdown-menu dro" aria-labelledby="dropdownId">
                             @foreach ($category as $item)
                                 <a href="{{ route('danhmuc', $item->id) }}"
-                                    class="list-group-item btn btn-outline-primary rounded-0"
+                                    class="list-group-item btn btn-outline-primary mar-top rounded-0"
                                     >{{ $item->name }}</a>
                             @endforeach
                         </div>

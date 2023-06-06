@@ -7,50 +7,50 @@ INSERT INTO
         `updated_at`,
         `deleted_at`
     )
-VALUES ('', 'áo', '1', NULL, NULL, NULL), (
-        '',
+VALUES (Null, 'áo', '1', NULL, NULL, NULL), (
+        Null,
         'quần',
         '0',
         NULL,
         NULL,
         NULL
     ), (
-        '',
+        Null,
         'giày',
         '1',
         NULL,
         NULL,
         NULL
-    ), ('', 'dép', '0', NULL, NULL, NULL), (
-        '',
+    ), (
+        Null,
+        'dép',
+        '0',
+        NULL,
+        NULL,
+        NULL
+    ), (
+        Null,
         'kính',
         '0',
         NULL,
         NULL,
         NULL
     ), (
-        '',
+        Null,
         'điện thoại',
         '0',
         NULL,
         NULL,
         NULL
     ), (
-        '',
+        Null,
         'tai nghe',
         '0',
         NULL,
         NULL,
         NULL
     ), (
-        '',
-        'bông tai',
-        '0',
-        NULL,
-        NULL,
-        NULL
-    ), (
-        '',
+        Null,
         'nhẫn',
         '0',
         NULL,
@@ -147,10 +147,34 @@ VALUES (
     ), (
         NULL,
         'Nhẫn vàng 99999k',
-        '9',
+        '8',
         'DuBai',
         '1',
         '900000000',
+        'recycle-bin-icon-31.png',
+        '1',
+        NULL,
+        NULL,
+        NULL
+    ), (
+        NULL,
+        'Iphone300',
+        '6',
+        'Trong mơ',
+        '1',
+        '10000',
+        'recycle-bin-icon-31.png',
+        '1',
+        NULL,
+        NULL,
+        NULL
+    ), (
+        NULL,
+        'Tai nghe gaming',
+        '7',
+        'Mỹ',
+        '15',
+        '3660000',
         'recycle-bin-icon-31.png',
         '1',
         NULL,
