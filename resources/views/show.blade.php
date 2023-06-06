@@ -21,9 +21,9 @@
                 </div>
                 <div class="card-body col-lg-6">
                     <h4 class="card-title text-center">{{ $product->name }}</h4>
-                    <p class="card-text">Gía: {{ $product->price }}</p>
+                    <p class="card-text">Giá: {{ $product->price }}</p>
                     <p class="card-text">Danh mục: {{ $product->category->name }}</p>
-
+                    <p class="card-text">Xuất xứ: {{ $product->origin }}</p>
                     <p class="card-text">Trạng thái: {!! $product->status
                         ? '<span class="badge badge-pill badge-primary">Còn hàng</span>'
                         : '<span class="badge badge-pill badge-danger">Hết hàng</span>' !!}</p>

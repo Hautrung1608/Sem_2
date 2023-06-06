@@ -27,7 +27,7 @@ class ProductStoreRequest extends FormRequest
             "name" => "bail|required|min:5|max:100",
             "price" => "bail|required|numeric|gte:1",
             "sale_price" => "bail|numeric|gte:0|lte:price",
-            "image" => "bail|required|mimes:png,jpg,jpeg,jfif,webp"
+            "image" => "bail|mimes:png,jpg,jpeg,jfif,webp"
         ];
     }
 }

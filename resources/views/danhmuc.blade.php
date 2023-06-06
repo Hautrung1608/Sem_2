@@ -27,7 +27,7 @@
                     <h1 class="text-center bg-danger">Sản phẩm theo danh mục: {{$category->name}} </h1>
                     <div class="row">
                         @foreach ($category->products as $item)
-                            <div class="col-lg-4 mt-4">
+                            <div class="col-lg-3 mt-4">
                                 <div class="card">
                                     <img class="card-img-top" src="{{ url('uploads') }}/{{ $item->image }}" alt=""
                                         height="200px">
@@ -46,7 +46,6 @@
                         @endforeach
                     </div>
                 </div>
-                {{-- {{ $product->links() }} --}}
             </div>
         </div>
     </div>
