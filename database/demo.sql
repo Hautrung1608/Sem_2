@@ -163,7 +163,7 @@ VALUES (
         'Trong mơ',
         '1',
         '10000',
-        'recycle-bin-icon-31.png',
+        'iphone15.jpg',
         '1',
         NULL,
         NULL,
