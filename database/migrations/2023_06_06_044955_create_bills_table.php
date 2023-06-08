@@ -16,6 +16,7 @@ return new class extends Migration
             $table->tinyInteger("status");
             $table->bigInteger("pro_id")->unsigned();
             $table->bigInteger("quantity");
+            $table->bigInteger("price");
             $table->foreign('pro_id')->references('id')->on('products');
             $table->timestamps();
         });
