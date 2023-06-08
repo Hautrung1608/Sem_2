@@ -24,7 +24,6 @@
                     <td>Tên danh mục</td>
                     <td>Xuất xứ</td>
                     <td>Số lượng</td>
-                    <td>Cập nhật số lượng</td>
                     <td>Đơn giá</td>
                     <td>Ảnh</td>
                     <td>Trạng thái</td>
@@ -39,17 +38,6 @@
                         <td>{{ $item->category->name }}</td>
                         <td>{{ $item->origin }}</td>
                         <td>{{ $item->quantity }}</td>
-                        <td>
-                            <form method="POST" enctype="multipart/form-data" action="{{ route('product.upquantity', $item->id) }}">
-                                @csrf
-                                @method('POST')
-                                <div class="form-group">
-                                    <input type="numder" class="quanti" aria-describedby="emailHelp"
-                                        name="quantity" value="{{ $item->quantity }}">
-                                    <button class="quan-btn" >cập nhật</button>
-                                </div>
-                            </form>
-                        </td>
                         <td>{{ $item->price }}</td>
                         <td class='anh_product'>
                             <img src="{{ url('uploads') }}/{{ $item->image }}" alt="" widtd="50px">
@@ -69,8 +57,6 @@
 
                     </tr>
                 @endforeach
-
-
             </tbody>
         </table>
         {{ $product->links() }}

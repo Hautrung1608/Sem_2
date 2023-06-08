@@ -32,6 +32,38 @@ class CartController extends Controller
             $quanti = $product->quantity - $req->quantity;
         };
         $product->quantity = $quanti;
+        if($product->quantity >=0){
+            $product->quantity = $quanti;
+            $product->save();
+            Bill::create(
+                ['status'=> $id,
+                'pro_id'=> $req->pro_id,
+                'quantity'=> $req->quantity,
+                'price'=> $price,
+                ]
+            );
+            if($id == 1){
+                return redirect()->route('showcart')->with('success', 'Nhập hàng thành công');
+            }else{
+                return redirect()->route('showcart')->with('success', 'Xuất hàng thành công');
+            };
+        }else{
+            if($id == 1){
+                $product->quantity = $quanti;
+                $product->save();
+                Bill::create(
+                    ['status'=> $id,
+                    'pro_id'=> $req->pro_id,
+                    'quantity'=> $req->quantity,
+                    'price'=> $price,
+                    ]
+                );
+                return redirect()->route('showcart')->with('success', 'Nhập hàng thành công');
+            }else{
+                return redirect()->back()->with('fail', 'hàng hóa trong kho không đủ');
+            };
+        };
+        $product->quantity = $quanti;
         $product->save();
         Bill::create(
             ['status'=> $id,

@@ -134,13 +134,4 @@ class ProductController extends Controller
             throw $th; 
         }
     }
-    public function upquan(Request $req, string $id)
-    {
-        $product=Product::find($id);
-        if($product) {
-            $product->quantity = $req->quantity;
-            $product->save();
-            return redirect()->back();
-        }
-    }
 }

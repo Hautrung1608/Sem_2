@@ -1,5 +1,17 @@
 @extends('master')
 @section('content')
+@if (session('fail'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>{{ session('fail') }}</strong>
+        </div>
+
+        <script>
+            $(".alert").alert();    
+        </script>
+    @endif
     <div class="container">
         <form method="POST" enctype="multipart/form-data" action="{{route('cart.add', $id)}}" class="col-md-6 center">
             @csrf
