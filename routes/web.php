@@ -23,11 +23,6 @@ use App\Http\Controllers\CartController;
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/show/{id}', [HomeController::class, 'show'])->name('show');
 
-Route::get('/showCart', [CartController::class, 'showCart'])->name('showcart');
-Route::get('/cart/{id}', [CartController::class, 'add']);
-Route::post('/cart/{id}', [CartController::class, 'create'])->name('cart.add');
-Route::post('update-cart/{id}', [CartController::class, 'update'])->name('cart.update');
-Route::get('delete-cart/{id}', [CartController::class, 'delete'])->name('cart.delete');
 
 Route::get('/danhmuc/{id}', [HomeController::class, 'danhmuc'])->name('danhmuc');
 
@@ -37,6 +32,9 @@ Route::get('/danhmuc/{id}', [HomeController::class, 'danhmuc'])->name('danhmuc')
 Route::middleware('auth')->prefix('admin')->group(function () {
 
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/showCart', [CartController::class, 'showCart'])->name('showcart');
+    Route::get('/cart/{id}', [CartController::class, 'add']);
+    Route::post('/cart/{id}', [CartController::class, 'create'])->name('cart.add');
 
     //Category
 

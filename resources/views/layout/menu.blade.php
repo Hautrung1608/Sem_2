@@ -28,7 +28,7 @@
                     @endauth
                 </div>
             </li>
-        </ul>
+        </ul> 
     </div>
     <form class="form-inline ml-3 my-2 my-lg-0">
         <a href="{{ route('showcart') }}" class="btn btn-primary form-control mr-sm-2">

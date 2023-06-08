@@ -28,4 +28,10 @@
         </ul>
         
     </div>
+    <form class="form-inline ml-3 my-2 my-lg-0">
+        <a href="{{ route('showcart') }}" class="btn btn-primary form-control mr-sm-2">
+            Hóa Đơn
+            <span class="badge badge-primary">{{ $cart->getTotal() }}</span>
+        </a>
+    </form>
 </nav>

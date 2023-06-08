@@ -46,10 +46,10 @@
         </table>
         {{ $bill->links() }}
         <div class="nut">
-            <a class="chu bar-link white-text" href="{{ url('cart/1') }}">Nhập hàng</a>
+            <a class="chu bar-link white-text" href="{{ url('admin/cart/1') }}">Nhập hàng</a>
         </div>
         <div class="nut">
-            <a class="chu white-text" href="{{ url('cart/0') }}">Xuất hàng</a>
+            <a class="chu white-text" href="{{ url('admin/cart/0') }}">Xuất hàng</a>
         </div>
     </div>
 @stop
