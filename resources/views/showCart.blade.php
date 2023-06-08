@@ -37,7 +37,7 @@
                         @if($item->status==1)
                         <td>Xuất hàng</td>
                         @else
-                        <td>Nhập hàng</td>
+                        <td>Xuất hàng</td>
                         @endif
                         <td>{{ $item->created_at }}</td>
                     </tr>

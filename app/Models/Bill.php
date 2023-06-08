@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Bill extends Model
 {
     protected $table = 'bills';
-    protected $fillable = ['status', 'pro_id', 'quantity', 'created_at'];
+    protected $fillable = ['status', 'pro_id', 'quantity','price','created_at'];
     public $timestamps = true;
 
     public function product()
