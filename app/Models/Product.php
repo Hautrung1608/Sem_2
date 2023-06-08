@@ -17,6 +17,15 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class, 'cate_id', 'id');
     }
+    /**
+     * 
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function bill()
+    {
+        return $this->hasMany(Bill::class, 'pro_id', 'id');
+    }
     public function scopeSearch($query)
     {
         if(request()->keywordpro){

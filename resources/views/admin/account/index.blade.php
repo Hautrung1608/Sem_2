@@ -15,22 +15,17 @@
                 </strong>
             </div>
         @endif
-        <div class="row align-items-center">
-            <div class="add col-lg-6">
-                <a href="{{ route('account.create') }}" class="btn btn-outline-success rounded-0">Add &plus;</a>
-            </div>
-        </div>
 
-        <table class="table table-bordered">
+        <table class="table table-bordered white-text">
             <thead>
                 <tr>
-                    <th>No.</th>
+                    <th>Thứ tự</th>
                     <th>ID</th>
-                    <th>User's Name</th>
-                    <th>Email Address</th>
-                    <th>Created At</th>
-                    <th>Role</th>
-                    <th>Action</th>
+                    <th>Họ tên</th>
+                    <th>Email</th>
+                    <th>Thời gian tạo tài khoản</th>
+                    <th>quyền</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -46,10 +41,10 @@
                             <form action="{{ route('account.destroy', $acc->id) }}" method="post">
                                 @method('DELETE')
                                 @csrf
-                                <a href="{{ route('account.edit', $acc->id) }}"  class="btn btn-outline-success">Edit</i></a>
-                                <button type="submit" {{ $acc->role == 1 ? 'disabled' : '' }} class="btn btn-outline-danger">
-                                   DELETE
-                                </button>
+                                <a href="{{ route('account.edit', $acc->id) }}"  class="nut-edit bar-link">Sửa</i></a>
+                                <a type="submit" {{ $acc->role == 1 ? 'disabled' : '' }} class="nut-dele">
+                                   Xóa
+                                </a>
                             </form>
                         </td>
                     </tr>

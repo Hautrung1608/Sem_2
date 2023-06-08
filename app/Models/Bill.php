@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bill extends Model
 {
-    use HasFactory;
+    protected $table = 'bills';
+    protected $fillable = ['status', 'pro_id', 'quantity', 'created_at'];
+    public $timestamps = true;
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'pro_id', 'id');
+    }
 }

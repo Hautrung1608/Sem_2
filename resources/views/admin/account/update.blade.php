@@ -10,7 +10,7 @@
             <input type="hidden" name="id" value="{{ $acc->id }}">
             <div class="row">
                 <div class="form-group col-lg-6">
-                    <label for="name">Username</label>
+                    <label for="name">Họ tên</label>
                     <input type="text" name="name" id="name"
                         class="form-control @error('name') is-invalid @enderror" placeholder="Username"
                         value="{{ old('name') ?? $acc->name }}" aria-describedby="helpId">
@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="form-group col-lg-6">
-                    <label for="email">Email Address</label>
+                    <label for="email">Email</label>
                     <input type="text" name="email" id="email"
                         class="form-control @error('email') is-invalid @enderror" placeholder="Email Address"
                         value="{{ old('email') ?? $acc->email }}" aria-describedby="helpId">
@@ -33,7 +33,7 @@
             <div class="row">
 
                 <div class="form-group col-lg-6">
-                    <label for="password">Password</label>
+                    <label for="password">Mật khẩu</label>
                     <input type="password" name="password" id="password"
                         class="form-control @error('password') is-invalid @enderror" placeholder="Password"
                         value="{{ old('password') }}" aria-describedby="helpId">
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="form-group col-lg-6">
-                    <label for="password_confirmation">Email Address</label>
+                    <label for="password_confirmation">Email</label>
                     <input type="password" name="password_confirmation" id="password_confirmation"
                         class="form-control @error('password_confirmation') is-invalid @enderror"
                         placeholder="Password Confirmation" value="{{ old('password_confirmation') }}"
@@ -58,12 +58,12 @@
                 <div class="form-group col-lg-6">
                     <label for="role">Role</label>
                     <select class="form-control" name="role" id="role">
-                        <option value="0" {{ $acc->role == 0 ? 'selected' : '' }}>Customers</option>
-                        <option value="1" {{ $acc->role == 1 ? 'selected' : '' }}>Administrator</option>
+                        <option value="0" {{ $acc->role == 0 ? 'selected' : '' }}>Nhân viên</option>
+                        <option value="1" {{ $acc->role == 1 ? 'selected' : '' }}>Admin</option>
                     </select>
                 </div>
             </div>
-            <button type="submit" class="btn btn-block btn-outline-success">Submit</button>
+            <button type="submit" class="btn btn-block btn-outline-success">Sửa</button>
         </form>
     </div>
 @endsection

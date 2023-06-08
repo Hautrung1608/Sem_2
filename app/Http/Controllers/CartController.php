@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Bill;
 use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 use App\Helper\Cart;
@@ -11,24 +12,26 @@ use App\Models\Order;
 
 class CartController extends Controller
 {
-    public function add(Request $req, $id)
-    {
-        $product = Product::find($id);
-        $cart = new Cart();
-        $cart->add($product, $req->quantity);
-        if ($cart) {
-            // return redirect()->route('showcart')->with('success', 'Thêm mới thành công');
-            return redirect()->route('home')->with('success', 'Thêm mới thành công');
-        }
-    }
     public function showCart(Request $req)
     {
-        $cart = new Cart();
-        $carts = $cart->getContent();
-        // dd($cart);
+        $bill = Bill::orderByDesc('id')->paginate(6);
+        return view('showCart',compact('bill'));
+    }
+    public function add(Request $req, $id)
+    {
         $product = Product::all();
-        $categories = Category::all();
-        return view('showcart', compact('product', 'categories', 'carts'));
+        return view('addCart',compact('product','id'));
+    }
+    public function create(Request $req, $id)
+    {   
+        $product = Product::all();
+        echo($product->id);
+        // if($product->id == $req->pro_id){
+        //     $bill = [$id,$req->pro_id,$req->quantity,$product->price];
+        //    console.log($bill);
+        //     Bill::create($bill);
+        //     return redirect()->route('showCart');
+        // }
     }
     public function update(Request $req,$id)
     {

@@ -1,22 +1,22 @@
 <div class="col-md-2 text-center">
     <div class="">
       <div class="container nut">
-        <a class="chu" href="{{route('category.index')}}"> Category</a>
+        <a class="chu" href="{{route('category.index')}}"> Danh mục</a>
       </div>
       <div class="container nut">
-        <a class="chu" href="{{ route('category.create') }}">Add Category</a>
+        <a class="chu" href="{{ route('category.create') }}">Thêm danh mục</a>
       </div>
       <div class="container nut">
-        <a class="chu" href="{{route('product.index')}}">Product</a>
+        <a class="chu" href="{{route('product.index')}}">Hàng hóa</a>
       </div>
       <div class="container nut">
-        <a class="chu" href="{{ route('product.create') }}">Add Product</a>
+        <a class="chu" href="{{ route('product.create') }}">Thêm hàng hóa</a>
       </div>
       <div class="container nut">
-        <a class="chu" href="{{ route('account.index') }}">View list</a>
+        <a class="chu" href="{{ route('account.index') }}">Người dùng</a>
       </div>
       <div class="container nut">
-        <a class="chu" href="{{ route('account.create') }}">Add Acount</a>
+        <a class="chu" href="{{ route('account.create') }}">Thêm tài khoản</a>
       </div>
       
     </div>

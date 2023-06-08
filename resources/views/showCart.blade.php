@@ -15,56 +15,40 @@
     @endif
 
     <div class="container mt-5">
-        <h1 class="text-center bg-primary">Hóa Đơn</h1>
-        <table class="table">
+        <h1 class="text-center bg-primary white-text">Hóa Đơn</h1>
+        <table class="table white-text">
             <thead>
                 <tr>
                     <th>STT</th>
                     <th>Tên sản phẩm</th>
-                    <th>Ảnh</th>
-                    <th>Giá</th>
                     <th>Số lượng</th>
                     <th>Tổng tiền</th>
+                    <th>Thể loại</th>
+                    <th>Thời gian</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($carts as $item)
-                    <tr>
+                @foreach ($bill as $item)
+                    <tr class="bg-blur">
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item['name'] }}</td>
-                        <td><img src="{{ url('uploads') }}/{{ $item['image'] }}" alt="" width="100px"></td>
-                        <td>{{ $item['price'] }}</td>
-                        <td>
-                            <form action="{{ route('cart.update', $item['product_id']) }}" class="form-inline"
-                                method="POST">
-                                @csrf
-                                <div class="form-group ">
-                                    <input type="text" name="quantity" value="{{ $item['quantity'] }}"
-                                        class="form-control">
-                                </div>
-
-                                <button class="btn btn-success mr-2 ml-2" type="submit">Update</button>
-
-                                <a href="{{ route('cart.delete', $item['product_id']) }}" class="btn btn-danger">Delete</a>
-
-                            </form>
-
-                        </td>
-
-                        <td>{{ $item['quantity'] * $item['price'] }}</td>
+                        <td>{{ $item->product->name }}</td>
+                        <td>{{ $item->quantity }}</td>
+                        <td>{{ $item['quantity'] * $item->product->price }}</td>
+                        @if($item->status==1)
+                        <td>Xuất hàng</td>
+                        @else
+                        <td>Nhập hàng</td>
+                        @endif
+                        <td>{{ $item->created_at }}</td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
-        <table class="table">
-            <tr>
-
-
-                <td class="" width="250px" colspan="5">
-                    <h3>Total All:</h3>
-                </td>
-                <td ><h3 class="text-right mr-4">{{$cart->getTotalPrice()}}</h3></td>
-            </tr>
-        </table>
+        <div class="nut">
+            <a class="chu bar-link white-text" href="{{ url('cart/1') }}">Nhập hàng</a>
+        </div>
+        <div class="nut">
+            <a class="chu white-text" href="{{ url('cart/0') }}">Xuất hàng</a>
+        </div>
     </div>
 @stop

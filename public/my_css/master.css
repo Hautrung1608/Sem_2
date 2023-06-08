@@ -116,17 +116,78 @@
     margin-top: 10px;
     border: 2px solid White;
     padding: 6px 12px 6px 12px;
-    transition-duration: 0.4s;
+    transition-duration: 0.2s;
     cursor: pointer;
-}
-
-.nut a {
     color: white;
 }
 
 .nut:hover {
     background-color: rgba(189, 189, 189, 0.627);
     color: black !important;
+}
+
+.nut-dele {
+    vertical-align: middle;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    display: inline-block;
+    margin-top: 10px;
+    border: 2px solid White;
+    padding: 8px 15px 8px 15px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    color: white;
+}
+
+.nut-dele:hover {
+    animation: dele 1s linear 0s infinite;
+    color: white;
+}
+
+@keyframes dele {
+    0% {
+        background-color: rgba(255, 255, 255, 0.33);
+    }
+
+    50% {
+        background-color: rgba(255, 0, 0, 0.832);
+    }
+
+    100% {
+        background-color: rgba(255, 255, 255, 0.314);
+    }
+}
+
+.nut-edit {
+    vertical-align: middle;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    display: inline-block;
+    margin-top: 10px;
+    border: 2px solid White;
+    padding: 8px 15px 8px 15px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    color: white;
+}
+
+.nut-edit:hover {
+    animation: edit 1s linear 0s infinite;
+    color: white;
+}
+
+@keyframes edit {
+    0% {
+        background-color: rgba(255, 255, 255, 0.33);
+    }
+
+    50% {
+        background-color: rgba(6, 255, 2, 0.795);
+    }
+
+    100% {
+        background-color: rgba(255, 255, 255, 0.314);
+    }
 }
 
 .chu {
@@ -182,6 +243,10 @@
 .quan-btn:hover {
     background-color: rgb(255, 255, 255);
     color: black;
+}
+
+.center {
+    margin-left: 25%;
 }
 
 /* responsive */
