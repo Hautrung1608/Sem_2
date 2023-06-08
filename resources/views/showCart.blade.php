@@ -21,6 +21,7 @@
                 <tr>
                     <th>STT</th>
                     <th>Tên sản phẩm</th>
+                    <th>Ảnh sản phẩm</th>
                     <th>Số lượng</th>
                     <th>Tổng tiền</th>
                     <th>Thể loại</th>
@@ -32,6 +33,9 @@
                     <tr class="bg-blur">
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->product->name }}</td>
+                        <td class='anh_product'>
+                            <img src="{{ url('uploads') }}/{{ $item->product->image  }}" alt="" widtd="50px">
+                        </td>
                         <td>{{ $item->quantity }}</td>
                         <td>{{ $item->quantity * $item->price }}</td>
                         @if($item->status==1)
