@@ -33,7 +33,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->product->name }}</td>
                         <td>{{ $item->quantity }}</td>
-                        <td>{{ $item['quantity'] * $item->product->price }}</td>
+                        <td>{{ $item->quantity * $item->price }}</td>
                         @if($item->status==1)
                         <td>Xuất hàng</td>
                         @else
@@ -44,6 +44,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $bill->links() }}
         <div class="nut">
             <a class="chu bar-link white-text" href="{{ url('cart/1') }}">Nhập hàng</a>
         </div>

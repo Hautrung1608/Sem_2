@@ -40,7 +40,11 @@ class CartController extends Controller
             'price'=> $price,
             ]
         );
-        return redirect()->route('showcart');
+        if($id == 1){
+            return redirect()->route('showcart')->with('success', 'Nhập hàng thành công');
+        }else{
+            return redirect()->route('showcart')->with('success', 'Xuất hàng thành công');
+        };
     }
     public function update(Request $req,$id)
     {
