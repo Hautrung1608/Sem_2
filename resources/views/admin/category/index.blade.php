@@ -21,7 +21,7 @@
                 <tr>
                     <td>STT</td>
                     <td>Tên danh mục</td>
-                    <td></td>
+                    <td>Trạng thái</td>
                     <td></td>
                 </tr>
             </thead>

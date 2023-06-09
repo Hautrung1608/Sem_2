@@ -40,7 +40,7 @@
                         <td>{{ $item->quantity }}</td>
                         <td>{{ $item->quantity * $item->price }}</td>
                         @if($item->status==1)
-                        <td>Xuất hàng</td>
+                        <td>Nhập hàng</td>
                         @else
                         <td>Xuất hàng</td>
                         @endif

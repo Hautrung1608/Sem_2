@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light container-fruid">
-    <a class="navbar-brand logo bar-link" href="/">
+    <a class="navbar-brand logo bar-link" href="{{ route('admin.index') }}">
         <img src="{{ url('/image/logo.png') }}" alt="" class="logo" />
     </a>
     <div class="collapse navbar-collapse search-box" id="collapsibleNavId">
@@ -33,7 +33,6 @@
     <form class="form-inline ml-3 my-2 my-lg-0">
         <a href="{{ route('showcart') }}" class="btn btn-primary form-control mr-sm-2">
             Hóa Đơn
-            <span class="badge badge-primary">{{ $cart->getTotal() }}</span>
         </a>
     </form>
 </nav>

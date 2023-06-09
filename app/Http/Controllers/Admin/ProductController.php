@@ -16,7 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = Product::orderByDesc('id')->paginate(6);
+        $product = Product::search()->orderBy('id', 'desc')->paginate(8);
         return view('admin.product.index',compact('product'));
     }
 
@@ -120,7 +120,7 @@ class ProductController extends Controller
     {
         try{
             Product::withTrashed()->find($id)->restore();
-            return redirect()->route('admin.product.index');
+            return redirect()->route('product.index');
         } catch (\Throwable $th) {
             throw $th; 
         }
@@ -129,7 +129,7 @@ class ProductController extends Controller
     {
         try{
             Product::withTrashed()->find($id)->forceDelete();
-            return redirect()->route('admin.product.index');
+            return redirect()->route('product.index');
         } catch (\Throwable $th) {
             throw $th; 
         }
