@@ -36,11 +36,11 @@ class CartController extends Controller
         if($product->quantity >=0){
             $product->quantity = $quanti;
             $product->save();
-            BBill::create(
+            Bill::create(
                 ['status'=> $id,
                 'pro_id'=> $req->pro_id,
                 'quantity'=> $req->quantity,
-                // 'maker'=> $req->maker,
+     
                 'price'=> $price,
                 ]
             );
@@ -57,7 +57,7 @@ class CartController extends Controller
                     ['status'=> $id,
                     'pro_id'=> $req->pro_id,
                     'quantity'=> $req->quantity,
-                    // 'maker'=> $req->maker,
+         
                     'price'=> $price,
                     ]
                 );
@@ -73,7 +73,7 @@ class CartController extends Controller
             ['status'=> $id,
             'pro_id'=> $req->pro_id,
             'quantity'=> $req->quantity,
-            // 'maker'=> $req->maker,
+ 
             'price'=> $price,
             ]
         );
@@ -85,11 +85,14 @@ class CartController extends Controller
         $cart->update($id,$req->quantity);
         return redirect()->back()->with('success', 'Thêm mới thành công');
     }
+
     public function delete($id, Cart $cart)
     {
         $cart->delete($id);
         return redirect()->back()->with('success', 'Xóa thành công');
     }
+
+
     
     
 }

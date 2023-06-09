@@ -1,4 +1,4 @@
-@extends('master')
+@extends('admin.master')
 @section('content')
 
     @if (session('success'))
@@ -45,7 +45,7 @@
                         <td>Xuất hàng</td>
                         @endif
                         <td>{{ $item->created_at }}</td>
-                        {{-- <td>{{ $item->maker }}</td> --}}
+                        
                     </tr>
                 @endforeach
             </tbody>

@@ -21,7 +21,7 @@ class UserController extends Controller
 
         try {
             if (Auth::attempt(['email' => $req->email, 'password' => $req->password])) {
-                return redirect()->route('home');
+                return redirect()->route('admin.index');
             } else {
                 return redirect()->back()->with('error', 'Email hoặc mật khẩu không đúng');
             }

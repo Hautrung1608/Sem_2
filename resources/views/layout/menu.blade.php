@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light container-fruid">
-    <a class="navbar-brand logo bar-link" href="{{ route('admin.index') }}">
+    <a class="navbar-brand logo bar-link" href="{{ route('admin.index') }}  ">
         <img src="{{ url('/image/logo.png') }}" alt="" class="logo" />
     </a>
     <div class="collapse navbar-collapse search-box" id="collapsibleNavId">

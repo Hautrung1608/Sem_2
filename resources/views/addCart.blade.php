@@ -37,6 +37,8 @@
                 <label class="white-text chu">Số lượng</label>
                     <input class="custom-select mr-sm-2" type="number" name="quantity" value="{{old('quantity')}}"> 
             </div>
+            
+            
             <button type="submit" class="btn btn-primary">ADD</button>
         </form>
     </div>
