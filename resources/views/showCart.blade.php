@@ -26,6 +26,7 @@
                     <th>Tổng tiền</th>
                     <th>Thể loại</th>
                     <th>Thời gian</th>
+                    {{-- <th>người khởi tạo</th> --}}
                 </tr>
             </thead>
             <tbody>
@@ -44,6 +45,7 @@
                         <td>Xuất hàng</td>
                         @endif
                         <td>{{ $item->created_at }}</td>
+                        {{-- <td>{{ $item->maker }}</td> --}}
                     </tr>
                 @endforeach
             </tbody>

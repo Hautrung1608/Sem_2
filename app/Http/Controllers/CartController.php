@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Bill;
+use Illuminate\Support\Facades\Auth;
 use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 use App\Helper\Cart;
@@ -35,10 +36,11 @@ class CartController extends Controller
         if($product->quantity >=0){
             $product->quantity = $quanti;
             $product->save();
-            Bill::create(
+            BBill::create(
                 ['status'=> $id,
                 'pro_id'=> $req->pro_id,
                 'quantity'=> $req->quantity,
+                // 'maker'=> $req->maker,
                 'price'=> $price,
                 ]
             );
@@ -55,9 +57,11 @@ class CartController extends Controller
                     ['status'=> $id,
                     'pro_id'=> $req->pro_id,
                     'quantity'=> $req->quantity,
+                    // 'maker'=> $req->maker,
                     'price'=> $price,
                     ]
                 );
+                
                 return redirect()->route('showcart')->with('success', 'Nhập hàng thành công');
             }else{
                 return redirect()->back()->with('fail', 'hàng hóa trong kho không đủ');
@@ -69,19 +73,10 @@ class CartController extends Controller
             ['status'=> $id,
             'pro_id'=> $req->pro_id,
             'quantity'=> $req->quantity,
+            // 'maker'=> $req->maker,
             'price'=> $price,
             ]
         );
     }
-    public function update(Request $req,$id)
-    {
-        $cart = new Cart();
-        $cart->update($id,$req->quantity);
-        return redirect()->back()->with('success', 'Thêm mới thành công');
-    }
-    public function delete($id, Cart $cart)
-    {
-        $cart->delete($id);
-        return redirect()->back()->with('success', 'Xóa thành công');
-    }
+    
 }

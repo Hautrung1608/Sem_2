@@ -31,7 +31,6 @@
                         @foreach($product as $item)
                         <option value="{{$item->id}}">{{$item->name}}</option>
                         @endforeach
-                    {{-- name="price" value="{{old('price')}}" --}}
                 </select>
             </div>
             <div class="form-group ">
