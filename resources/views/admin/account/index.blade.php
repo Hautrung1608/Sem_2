@@ -42,9 +42,10 @@
                                 @method('DELETE')
                                 @csrf
                                 <a href="{{ route('account.edit', $acc->id) }}"  class="nut-edit bar-link">Sửa</i></a>
-                                <a type="submit" {{ $acc->role == 1 ? 'disabled' : '' }} class="nut-dele">
+                                <button type="submit" style="{{ $acc->role == 1 ? 'display:none' : '' }}" class="nut-dele">
                                    Xóa
-                                </a>
+                                </button>
+                                {{-- {{ $acc->role == 1 ? 'disabled' : '' }} --}}
                             </form>
                         </td>
                     </tr>

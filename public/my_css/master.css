@@ -63,12 +63,17 @@
 .white-text {
     color: white !important;
 }
-
-
-.mar-top {
-    margin-top: 10px;
+.border-none{
+    border: 0px;
+    background-color: transparent;
 }
 
+.mar-top {
+    margin-top: 10px !important;
+}
+.home-top{
+    margin-top: 40px !important;
+}
 .main {
     padding-right: 10% !important;
     padding-left: 10% !important;
@@ -136,7 +141,7 @@
     padding: 8px 15px 8px 15px;
     transition-duration: 0.2s;
     cursor: pointer;
-    color: white;
+    color: black;
 }
 
 .nut-dele:hover {

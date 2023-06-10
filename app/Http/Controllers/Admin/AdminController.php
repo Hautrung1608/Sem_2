@@ -12,7 +12,7 @@ class AdminController extends Controller
     public function index()
     {
         $category = Category::search()->paginate(20)->withQueryString();
-        $product = Product::search()->orderBy('id', 'desc')->paginate(8);
+        $product = Product::search()->orderBy('id', 'desc')->paginate(6);
         return view('admin.index',compact('product', 'category'));
     }
 

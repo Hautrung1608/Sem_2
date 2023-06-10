@@ -37,7 +37,7 @@ class UserController extends Controller
     public function postLogon(Request $req)
     {
         try {
-            if (Auth::attempt(['email' => $req->email, 'password' => $req->password])) {
+            if (Auth::attempt(['email' => $req->email, 'password' => $req->password, 'role'=>1])) {
                 return redirect()->route('admin.index');
             } else {
                 return redirect()->back()->with('error', 'Email hoặc mật khẩu không đúng');

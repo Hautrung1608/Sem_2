@@ -16,10 +16,10 @@
 
 <body>
     @include('layout.menu')
-    <div class="container-fluid mar-top bg-main">
+    <div class="container-fluid bg-main">
 
-        <div class="">
-            <div class="bg-text">
+        <div class="m-t-10">
+            <div class="bg-text ">
                 @yield('content')
             </div>
         </div>
